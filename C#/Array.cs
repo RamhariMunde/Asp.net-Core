@@ -8,61 +8,66 @@ using System.Threading.Tasks;
 namespace paper1
 {
     internal class Program
-    {/* // string occurraence
-            Console.WriteLine("Enter the string : ");
-            string str = Console.ReadLine();
-
-            for (int i = 0; i < str.Length; i++)
-            {
-                Console.WriteLine(str[i]);
-
-            }
-            Console.WriteLine();
-            Console.ReadKey();*/
-       
+    {       
         static void Main(string[] args)
         {
-          
-                Console.Write("Enter the number of rows: ");
-                int r = Convert.ToInt32(Console.ReadLine());
-
-                Console.Write("Enter the number of columns: ");
-                int c = Convert.ToInt32(Console.ReadLine());
-
-                int[,] array = new int[r, c];
-
-                // Input the elements of the array
-                for (int i = 0; i < r; i++)
-                {
-                    for (int col = 0; col < c; col++)
-                    {
-                        array[i, col] = Convert.ToInt32(Console.ReadLine());
-                    }
+              //Matrix Addition Demo
+            int[,] A = new int[2, 2];
+            int[,] B = new int[2, 2];
+            int[,] C = new int[2, 2];
+            Console.WriteLine("enter 4 elements into Matrix A: ");
+            for (int i = 0; i < 2; i++)
+{
+                for (int j = 0; j< 2; j++)
+{
+                    A[i, j] = Convert.ToInt32(Console.ReadLine());
                 }
-
-                int[] Sums = new int[c];
-
-                // Calculate the sum of each column
-                for (int col = 0; col < c; col++)
-                {
-                    int sum = 0;
-                    for (int row = 0; row < r; row++)
-                    {
-                        sum += array[row, col];
-                    }
-                    Sums[col] = sum;
+            }
+            Console.WriteLine("enter 4 elements into Matrix B: ");
+            for (int i = 0; i < 2; i++)
+{
+                for (int j = 0; j < 2; j++)
+{
+                    B[i, j] = Convert.ToInt32(Console.ReadLine());
                 }
+            }
 
-                // Print the sum of each column
-                Console.WriteLine("Sum of each column:");
-                for (int col = 0; col < c; col++)
-                {
-                    Console.WriteLine($"Column {col + 1}: {Sums[col]}");
+            //Sum of Matrix A and B
+            for (int i = 0; i < 2; i++)
+{
+                for (int j = 0; j < 2; j++)
+{
+                    C[i, j] = A[i, j] + B[i, j];
                 }
-     
-
-
-
+            }
+            Console.WriteLine("\n Elements of Matrix A: ");
+            for (int i = 0; i< 2; i++)
+{
+                for (int j = 0; j < 2; j++)
+{
+                    Console.Write(A[i, j] + "\t");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("\n Elements of Matrix B: ");
+            for (int i = 0; i < 2; i++)
+{
+                for (int j = 0; j < 2; j++)
+{
+                    Console.Write(B[i, j] + "\t ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("\n A+B Matrix is :");
+            for (int i = 0; i< 2; i++)
+{
+                for (int j = 0; j < 2; j++)
+{
+                    Console.Write(C[i, j] + "\t ");
+                }
+                Console.WriteLine();
+            }
+            Console.ReadKey();
     }
 }
 }
