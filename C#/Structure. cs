@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Structure1
+{   
+    internal class Program
+    {
+        /*
+Structures:- It is a collection of different data typed elements. Structure is a
+value type. Generally, we create a structure and store a group of related
+elements.
+
+In C#, a structure (struct) is a value type that is used to encapsulate small groups of related variables. 
+Unlike classes, structs do not support inheritance, but they can implement interfaces. 
+Structs are useful for representing lightweight objects that have small memory
+footprints and do not require the overhead of heap allocation.
+
+  Differences between struct and class
+ Structure is a value type whereas class is a reference type
+ Inheritance is not possible in Structures where it is possible in classes.
+ Structures are stored in stack where as classes stored in Heap.
+ Structures are faster than classes.
+
+  Use of Structure
+Performance-Critical Code: Since structs are value types and are allocated on the 
+  stack rather than the heap, they can be more efficient in scenarios where 
+  performance is critical and the data size is small.
+
+Simple Data Structures: When you need to represent a small and simple data structure,
+   such as a point, rectangle, or color, structs can be a good choice.
+
+Immutable Types: Structs are often used to create immutable types, where the instance 
+   cannot be changed after it is created. By design, structs can be used to enforce 
+   immutability easily by not providing any setters for their properties.
+
+EX:-
+
+         */
+        struct Salary
+        {
+            public string Name;
+            public int sal;
+            public double points;
+            public void display()
+            {
+                Console.WriteLine("name: "+Name);
+                Console.WriteLine("sal: "+sal);
+                Console.WriteLine("points: "+points);
+            }
+        }
+        static void Main(string[] args)
+        {
+            Salary emp;
+            emp.Name = "Ram Munde";
+            emp.sal = 20000;
+            emp.points= 12.4;
+            emp.display();
+            Console.ReadKey();
+        }
+    }
+}
