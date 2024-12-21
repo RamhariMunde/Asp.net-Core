@@ -1,0 +1,128 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="SuccessPage.aspx.cs" Inherits="Web_Form_by_bangar.SuccessPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body style="height: 432px">
+    <form id="form1" runat="server">
+       <div>
+
+               Name :
+               <asp:TextBox runat="server" ID="txtname"></asp:TextBox><br/>
+          
+               Gender :
+               <asp:RadioButton  runat="server" ID="radmale" Text="Male" GroupName="gender"/>
+               <asp:RadioButton runat="server" ID="radfemal" Text="Femal" GroupName="gender" />
+               <asp:RadioButton runat="server" ID="radother" Text="Other" GroupName="gender" /><br/>
+       
+              Etting Habits :
+               <asp:RadioButton  runat="server" ID="rbvage" Text="vage" GroupName="habit"/>
+               <asp:RadioButton runat="server" ID="rbnonveg" Text="Non-vage" GroupName="habit" />
+               <asp:RadioButton runat="server" ID="rbvegan" Text="Vegan" GroupName="habit"/><br/>
+        
+              Hobbis :
+              <asp:CheckBox runat="server" ID="rdreading" Text="Reading Books" GroupName="habits"/>
+              <asp:CheckBox runat="server" ID="rdswmming" Text="swmming" GroupName="habits" />
+              <asp:CheckBox runat="server" ID="rdwatchmovie" Text="Watching Movie" GroupName="habits" />
+             <asp:CheckBox runat="server" ID="rdgame" Text="Online Games" GroupName="habits" />
+             <asp:CheckBox runat="server" ID="rdplay" Text="Cricket" GroupName="habits" /> <br/>
+      
+               <asp:Button runat="server" ID="btnsubmit" Text="Submit" OnClick="btnsubmit_Click" />
+              <asp:Label runat="server" ID="lblmassage" ForeColor="Blue"></asp:Label>
+           </div>
+    </form>
+</body>
+</html>
+
+
+//////////////////////////////////////////////////////////
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Web_Form_by_bangar
+{
+    public partial class SuccessPage : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+          if(!IsPostBack)
+            {
+                txtname.Focus();
+            }
+          lblmassage.Text = string.Empty;
+        }
+
+        protected void btnsubmit_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            if (txtname.Text.Trim().Length > 0)
+            {
+                sb.Append($"<br/>Name:{txtname.Text}<br/>");
+            }
+            if (radmale.Checked)
+            {
+                sb.Append($"Gender:Male<br/>");
+            }
+            else if (radfemal.Checked)
+            {
+                sb.Append($"Gender:Female<br/>");
+            }
+            else if(radother.Checked)
+            {
+                sb.Append($"Gender:Other<br/>");
+            }
+
+
+            if (rbvage.Checked)
+            {
+                sb.Append($"Eating Habbit:Vage<br/>");
+            }
+            else if(rbnonveg.Checked)
+            {
+                sb.Append($"Eating Habbit:Non-Vage<br/>");
+            }
+            else if(rbvegan.Checked)
+            {
+                sb.Append($"Eating Habbit:Vegan<br/>");
+            }
+
+            List<string> list = new List<string>();
+            if(rdgame.Checked)
+            {
+                list.Add("Playing Games");
+            }
+            if(rdplay.Checked)
+            {
+                list.Add("Playing Cricket");
+            }
+            if(rdreading.Checked)
+            {
+                list.Add("Reading Books");
+            }
+            if(rdswmming.Checked)
+            {
+                list.Add("Swmming");
+            }
+            if(rdwatchmovie.Checked)
+            {
+                list.Add("Watching Movie");
+            }
+
+            if (list.Count > 0)
+            {
+                sb.Append($"Hobbis:{string.Join(", ", list)}");
+            }
+            lblmassage.Text = sb.ToString();
+
+        }
+    }
+}

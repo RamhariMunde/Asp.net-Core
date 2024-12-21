@@ -1,0 +1,186 @@
+Registration Form Asp.Net
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegistrationForm.aspx.cs" Inherits="RegistrationForm.RegistrationForm" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            height: 58px;
+        }
+        .auto-style2 {
+            height: 65px;
+        }
+        .auto-style3 {
+            height: 58px;
+            width: 103px;
+        }
+        .auto-style4 {
+            height: 65px;
+            width: 103px;
+        }
+        .auto-style5 {
+            height: 58px;
+            width: 132px;
+        }
+        .auto-style6 {
+            height: 65px;
+            width: 132px;
+        }
+        .auto-style7 {
+            height: 53px;
+        }
+        .auto-style8 {
+            height: 47px;
+        }
+        .auto-style9 {
+            height: 75px;
+            width: 225px;
+        }
+        .auto-style10 {
+            height: 47px;
+            width: 225px;
+        }
+        .auto-style11 {
+            height: 53px;
+            width: 225px;
+        }
+        .auto-style12 {
+            height: 65px;
+            width: 225px;
+        }
+        .auto-style13 {
+            height: 58px;
+            width: 225px;
+        }
+        .auto-style14 {
+            width: 225px;
+        }
+        .auto-style15 {
+            height: 569px;
+        }
+    </style>
+</head>
+<body style="height: 366px">
+     <h1>Registration Form</h1>
+    <form id="form1" runat="server">
+        <div>
+            <table class="auto-style15">
+           
+            <tr>
+                <td class="auto-style10">Enter your ID: </td>
+                <td class="auto-style8"><asp:TextBox ID="txtid" runat="server" Width="306px" ></asp:TextBox></td>
+            </tr>
+            <br />
+               <tr>
+       <td class="auto-style11">Enter your name: </td>
+       <td class="auto-style7"><asp:TextBox ID="txtname" runat="server" Width="299px" ></asp:TextBox>
+           <br />
+                   </td>
+              </tr>
+             <br />
+               <tr>
+       <td class="auto-style12">Enter your Age: </td>
+       <td class="auto-style2"><asp:TextBox ID="txtage" runat="server" Width="305px" ></asp:TextBox></td>
+           </tr>
+            <br />
+                  <tr>
+          <td class="auto-style13">Select Gender </td>
+                <td id="radman" class="auto-style1"><asp:RadioButton  ID="rbtmen" runat="server" Text="Men" GroupName="gender"/></td>
+                <td class="auto-style3"><asp:RadioButton  ID="rbtfemal" runat="server" Text="Femal" GroupName="gender"/></td>
+                <td class="auto-style5"><asp:RadioButton  ID="rbtother" runat="server" Text="Othe" GroupName="gender" OnCheckedChanged="radother_CheckedChanged"/></td>
+    </tr>
+                    <br />
+              <tr>
+      <td class="auto-style12">select Language :</td>
+                  <td class="auto-style2"><asp:CheckBox ID="chkmarathi" runat="server" Text="marathi" /></td>
+                  <td class="auto-style4"><asp:CheckBox ID="chkhindi" runat="server" Text="Hindi" /></td>
+                  <td class="auto-style6"><asp:CheckBox ID="Chkenglish" runat="server" Text="English" /></td>
+</tr>
+      <br />
+                <tr>
+                  <td class="auto-style9"><asp:Button  ID="btnsubmit" runat="server" Text="Submit" Height="36px" OnClick="btnsubmit_Click" Width="112px"/></td> 
+                </tr>
+                <br />
+                <tr>
+               <td class="auto-style14"><asp:Label ID="lblmessage" runat="server" Text="lebal" ForeColor="Blue"></asp:Label></td>
+           </tr>
+        </table>
+            <br />
+            <br />
+        </div>
+       
+    </form>
+</body>
+</html>
+
+
+Code Bihind Code:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace RegistrationForm
+{
+    public partial class RegistrationForm : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void radother_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnsubmit_Click(object sender, EventArgs e)
+        {
+            int  id = Convert.ToInt32(txtid.Text);
+            string name = txtname.Text;
+            int age = Convert.ToInt32(txtage.Text);
+
+            string gender = string.Empty;
+
+            if (rbtmen.Checked == true)
+            {
+                gender += rbtmen.Text;
+            }
+            else if (rbtfemal.Checked == true)
+            {
+                gender += rbtfemal.Text;
+            }
+            else if (rbtother.Checked == true)
+            {
+                gender += rbtother.Text;   
+            }
+            else
+            {
+                lblmessage.Text = "Please salect Gender";
+            }
+
+            string Languages = string.Empty;
+            if (chkmarathi.Checked == true)
+            {
+                Languages += chkmarathi.Text+" ,";
+            }
+            if (chkhindi.Checked == true)
+            {
+                Languages += chkhindi.Text+", ";
+            }
+            if (Chkenglish.Checked == true)
+            {
+                Languages += Chkenglish.Text;
+            }
+            lblmessage.Text = "student ID: " +id + "<br>" + "Student Name: " + name + "<br>" + "studnt Age: " + age+ "<br>" + "Gender :"+gender +"<br>"+ "Languages: "+Languages;
+            
+        }
+    }
+}

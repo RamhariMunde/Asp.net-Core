@@ -1,0 +1,35 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hello1
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            int count, Number;
+            Console.Write("Enter the number: ");
+            Number = Convert.ToInt32(Console.ReadLine());
+
+            for (count = 1; count <= Math.Sqrt(Number); count++)
+            {
+                if (Number % count == 0)
+                {
+                    if (count != Number / count)
+                    {
+                        Console.Write(count + " " + Number / count + " ");
+                    }
+                    else
+                    {
+                        Console.Write(count + " ");
+                    }
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}

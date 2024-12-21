@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PractsC
+{
+    public class Program
+    {
+        static void Main()
+        {
+            int Number;
+            Console.WriteLine("Enter the number:");
+            Number = Convert.ToInt32(Console.ReadLine());
+
+            if (checkPrime(Number))
+            {
+                Console.WriteLine("the number is prime");
+            }
+            else
+            {
+                Console.WriteLine("the number is not prime");
+            }
+            Console.ReadKey();
+        }
+        static bool checkPrime(int N)
+        {
+            int F_count = 0;
+            for (int count = 2; count <= Math.Sqrt(N); count++)
+            {
+                if (N % count == 0)
+                {
+                    F_count += 2;
+                    break;
+                }
+            }
+            return F_count == 0 ? true : false;  // tarnary oprater
+            //if (F_count == 0)
+            //{
+            //    return true;
+            //}
+            //else
+            //{
+            //    return false;
+            //}
+           
+        }
+    }
+}

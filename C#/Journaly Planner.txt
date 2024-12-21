@@ -1,0 +1,106 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Journey Planner.aspx.cs" Inherits="Assiment_10_course_salect.Journey_Planner" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table align="center">
+                <caption>Journy Planner</caption>
+                <tr>
+                    <td>Enter Name:</td>
+                    <td><asp:TextBox ID="txtname" runat="server"></asp:TextBox></td>
+                    <td><asp:RequiredFieldValidator ID="rfvname" runat="server" ErrorMessage="this field is required!" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtname"></asp:RequiredFieldValidator></td>
+                </tr> <br />
+               
+                <tr>
+                    <td>Enter Age:</td>
+                    <td><asp:TextBox ID="txtage" runat="server"></asp:TextBox></td>
+                    <td><asp:RequiredFieldValidator ID="rfvage" runat="server" ErrorMessage="this field is required!" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtage"></asp:RequiredFieldValidator><br />
+                        <asp:RangeValidator ID="rvage" runat="server" ControlToValidate="txtage" Display="Dynamic" ErrorMessage="your age is btween 18-65 years" ForeColor="Red" MaximumValue="65" MinimumValue="18" Type="Integer"></asp:RangeValidator>
+                    </td>
+                </tr><br />
+                <tr>
+                    <td>Date of Jouney</td>
+                    <td><asp:TextBox ID="txtdoj" runat="server"></asp:TextBox>
+                        <asp:ImageButton  ID="imgdate" runat="server" ImageUrl="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678116-calendar-512.png" Width="33px" Height="20px" ImageAlign="AbsMiddle" OnClick="imgdate_Click" ValidationGroup="DateGroup"/>
+                        <asp:Calendar ID="clddate" runat="server" OnSelectionChanged="clddate_SelectionChanged"></asp:Calendar>
+                    </td>
+                    <td><asp:RequiredFieldValidator ID="rfvdate" runat="server" ErrorMessage="this field is required!" ForeColor="Red" Display="Dynamic" SetFocusOnError="true" ControlToValidate="txtdoj"></asp:RequiredFieldValidator>
+                        <br />
+                        <asp:RangeValidator ID="rvdate" runat="server" ControlToValidate="txtdoj" Display="Dynamic" ErrorMessage="Traval data should be with-in 90 days from current date" ForeColor="Red" Type="Date"></asp:RangeValidator>
+                    </td>
+                </tr><br />
+                <tr>
+                    <td colspan="2" align="center"> <asp:Button  runat="server" ID="btnsubmit" Text="Confirm Booking" OnClick="btnsubmit_Click"/></td>
+                </tr>
+                <tr>
+                    <td colspan="3"> <asp:Label ID="lblmsg" runat="server"></asp:Label></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
+
+
+// code behind
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace Assiment_10_course_salect
+{
+    public partial class Journey_Planner : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            lblmsg.Text = string.Empty;
+            if(!IsPostBack)
+            {
+                txtname.Focus();
+            }
+            rvdate.MinimumValue = DateTime.Now.ToShortDateString();
+            rvdate.MaximumValue = DateTime.Now.AddDays(90).ToShortDateString();
+        }
+
+        protected void btnsubmit_Click(object sender, EventArgs e)
+        {
+           if(IsValid)
+            {
+                lblmsg.ForeColor = System.Drawing.Color.Green;
+                lblmsg.Text = "Your booking is confirmed";
+            }
+            else
+            {
+                lblmsg.ForeColor = System.Drawing.Color.Red;
+                lblmsg.Text = "Validation failed please check your data";
+            }
+        }
+
+        protected void clddate_SelectionChanged(object sender, EventArgs e)
+        {
+            txtdoj.Text = clddate.SelectedDate.ToShortDateString();
+            clddate.Visible = false;
+        }
+        protected void imgdate_Click(object sender, ImageClickEventArgs e)
+        {
+            if (clddate.Visible)
+            {
+                clddate.Visible = false;
+            }
+            else
+            {
+                clddate.Visible = true;
+            }
+        }
+    }
+}

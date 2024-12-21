@@ -1,0 +1,55 @@
+Simple Button And lable
+
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ButtonCodein Asp.aspx.cs" Inherits="File_Uplode.ButtonCodein_Asp" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <h1>ASP.Net Button Code </h1>
+    <form id="form1" runat="server">
+        <div>
+            <tr>
+                <td></td>
+            </tr>
+            <tr>
+                <td><asp:Button Id="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click"/></td>
+                <td></td>
+            </tr>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label runat="server" ID="lblmessage" Text="Reset" > </asp:Label>
+        </div>
+    </form>
+</body>
+</html>
+
+
+Code behind code
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace File_Uplode
+{
+    public partial class ButtonCodein_Asp : System.Web.UI.Page
+    {
+       
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Response.Write("<h1> Psge is Lodding......</h1>");
+            lblmessage.Text= string.Empty;
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Response.Write("<h1> Button clicked by Ram </h1>");
+            lblmessage.Text = string.Empty; 
+        }
+    }
+}

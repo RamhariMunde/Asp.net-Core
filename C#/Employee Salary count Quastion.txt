@@ -1,0 +1,42 @@
+////
+Rajesh is working as a HR in a jeweler company and all the employees are working dedicatedly from the 30 years in the company, and company got huge profits in this 
+year 2024 company owner decided to give two month's salary as bonus for every leap year the past 30 year to the current year.
+////
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hello1
+{
+    internal class Program
+    {
+        static void Main()
+        {
+            Console.Write("Enter the number of Employee: ");
+            int Number_Employee = Convert.ToInt32(Console.ReadLine());
+
+            Double Additional_Salary = 0;
+
+            Console.Write("Enter the current year: ");
+            int current_year = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < Number_Employee; i++)
+            {
+                Console.Write("Enter the monthly salary of employee {0}: ", i + 1);
+                double Monthly_Salary = Convert.ToDouble(Console.ReadLine());
+
+                for (int year = current_year - 30; year < current_year; year++)
+                {
+                    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+                    {
+                        Additional_Salary += Monthly_Salary * 2;
+                    }
+                }
+            }
+            Console.WriteLine("Total additional salary required to be paid to all employees : {0}",Additional_Salary);
+            Console.ReadKey();
+        }
+    }
+}

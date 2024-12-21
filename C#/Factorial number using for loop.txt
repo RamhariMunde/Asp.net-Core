@@ -1,0 +1,26 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hello1
+{
+    internal class Program
+    {
+      static void Main()
+        {
+            int Number, count, factorial_value = 1;
+            Console.Write("Enter any number: ");
+            Number = Convert.ToInt32(Console.ReadLine());
+
+            for(count = 1; count <= Number; count++)
+            {
+                factorial_value = factorial_value * count;
+            }
+            Console.WriteLine("This is factorial value: " + factorial_value);
+            Console.ReadKey();
+        }
+    }
+}
