@@ -1,0 +1,41 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PractsC
+{
+    public class Program
+    {
+        class Rectangle
+        {
+            int length, Breadth, Area, Perimeter;
+            public void GateData()
+            {
+                Console.Write("Enter the length of trangle: ");
+                length = Convert.ToInt32(Console.ReadLine());
+                Console.Write("Enter the Breadth of triangle: ");
+                Breadth = Convert.ToInt32(Console.ReadLine());
+            }
+            public void Calcultion()
+            {
+                Area = length * Breadth;
+                Perimeter = 2 * (length + Breadth);
+            }
+            public void DisplayData()
+            {
+                Console.WriteLine("the Are of the rectangle = " + Area);
+                Console.WriteLine("the parimeter of rectangle = " + Perimeter);
+            }
+        }
+        static void Main()
+        {
+            Rectangle rectangle = new Rectangle();
+            rectangle.GateData();
+            rectangle.Calcultion();
+            rectangle.DisplayData();
+            Console.ReadKey();
+        }
+    }
+}

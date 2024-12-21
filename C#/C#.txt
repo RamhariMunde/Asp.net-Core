@@ -1,0 +1,1173 @@
+Learn C#
+
+C# (C-Sharp) is a programming language developed by Microsoft that runs on the .NET Framework.
+C# is used to develop web apps, desktop apps, mobile apps, games and much more.
+
+What is C#?
+C# is pronounced "C-Sharp".
+It is an object-oriented programming language created by Microsoft that runs on the .NET Framework.
+C# has roots from the C family, and the language is close to other popular languages like C++ and Java.
+The first version was released in year 2002. The latest version, C# 12, was released in November 2023.
+
+C# is used for:
+
+Mobile applications,Desktop applications,Web applications,Web services,Web sites,Database applications
+
+Why Use C#?
+It is one of the most popular programming languages in the world
+It is easy to learn and simple to use
+It has huge community support
+C# is an object-oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs
+As C# is close to C, C++ and Java, it makes it easy for programmers to switch to C# or vice versa
+
+C# Syntax
+- In the previous chapter, we created a C# file called Program.cs, and we used the following code to print "Hello World" to the screen:
+
+using System;        // Line 1: using System means that we can use classes from the System namespace. namespace diclaration
+                     // Line 2: A blank line. C# ignores white space. However, multiple lines makes the code more readable.
+namespace HelloWorld // Line 3: namespace is used to organize your code, and it is a container for classes and other namespaces.
+{                    // Line 4: The curly braces {} marks the beginning and the end of a block of code.
+  class Program      // Line 5: class is a container for data and methods, which brings functionality to your program. Every line of code 
+                        that runs in C# must be inside a class.
+  {
+    static void Main(string[] args) // Line 7: Another thing that always appear in a C# program is the Main method. Any code inside its
+                                       curly brackets {} will be executed. You don't have to understand the keywords before and after Main. 
+                                       You will get to know them bit by bit while reading this tutorial.
+
+    {
+      Console.WriteLine("Hello World!");    // Line 9: Console is a class of the System namespace, 
+                                              which has a WriteLine() method that is used to output/print text.
+
+    }
+  }
+}
+
+Note: C# is case-sensitive; "MyClass" and "myclass" have different meaning.
+
+The Write Method
+There is also a Write() method, which is similar to WriteLine().
+The only difference is that it does not insert a new line at the end of the output:
+
+C# Variables
+Variables are containers for storing data values.
+
+In C#, there are different types of variables (defined with different keywords), for example:
+
+int - stores integers 4 bytes 
+long int -	8 bytes	
+float	4 bytes	Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+double - stores floating point numbers 8 bytes
+char - stores single characters 2 bytes	
+string - stores text 2 bytes 
+bool - stores values with two states: true or false 1 bit	
+
+Data Type	Size	Description
+Numbers
+Number types are divided into two groups:
+
+Integer types stores whole numbers, positive or negative (such as 123 or -456), without decimals. 
+Valid types are int and long. Which type you should use, depends on the numeric value.
+
+Floating point types represents numbers with a fractional part, containing one or more decimals. Valid types are float and double.
+
+C# Type Casting
+Type casting is when you assign a value of one data type to another type.
+
+In C#, there are two types of casting:
+
+Implicit Casting (automatically) - converting a smaller type to a larger type size
+char -> int -> long -> float -> double
+
+Explicit Casting (manually) - converting a larger type to a smaller size type
+double -> float -> long -> int -> char
+
+Implicit Casting
+Implicit casting is done automatically when passing a smaller size type to a larger size type:
+
+int myInt = 9;
+double myDouble = myInt;       // Automatic casting: int to double
+
+Console.WriteLine(myInt);      // Outputs 9
+Console.WriteLine(myDouble);   // Outputs 9
+
+Explicit Casting
+Explicit casting must be done manually by placing the type in parentheses in front of the value:
+
+double myDouble = 9.78;
+int myInt = (int) myDouble;    // Manual casting: double to int
+
+Console.WriteLine(myDouble);   // Outputs 9.78
+Console.WriteLine(myInt);      // Outputs 9
+
+#Operators
+Operators are used to perform operations on variables and values.
+
+Assignment Operators
+Assignment operators are used to assign values to variables.
+
+Comparison Operators
+Comparison operators are used to compare two values (or variables). This is important in programming,
+because it helps us to find answers and make decisions.
+
+The return value of a comparison is either True or False. These values are known as Boolean values, 
+and you will learn more about them in the Booleans and If..Else chapter.
+
+As with comparison operators, you can also test for True or False values with logical operators.
+Logical operators are used to determine the logic between variables or values:
+
+Operator	Name	Description	Example	Try it
+&& 	Logical and	Returns True if both statements are true	x < 5 &&  x < 10	
+|| 	Logical or	Returns True if one of the statements is true	x < 5 || x < 4	
+!	Logical not	Reverse the result, returns False if the result is true
+
+C# has the following conditional statements:
+
+Use if to specify a block of code to be executed, if a specified condition is true
+Use else to specify a block of code to be executed, if the same condition is false
+Use else if to specify a new condition to test, if the first condition is false
+Use switch to specify many alternative blocks of code to be executed
+
+C# Switch Statements
+Use the switch statement to select one of many code blocks to be executed.
+
+switch(expression) 
+{
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+    break;
+}
+This is how it works:
+
+The switch expression is evaluated once
+The value of the expression is compared with the values of each case
+If there is a match, the associated block of code is executed
+The break and default keywords will be described later in this chapter
+
+Create an Array
+Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.
+To declare an array, define the variable type with square brackets:
+
+string[] cars;
+We have now declared a variable that holds an array of strings.
+To insert values to it, we can use an array literal - place the values in a comma-separated list, inside curly braces:
+
+C# Methods
+A method is a block of code which only runs when it is called.
+You can pass data, known as parameters, into a method.
+Methods are used to perform certain actions, and they are also known as functions.
+Why use methods? To reuse code: define the code once, and use it many times.
+
+Create a Method
+A method is defined with the name of the method, followed by parentheses (). C# provides some pre-defined methods,
+which you already are familiar with, such as Main(), but you can also create your own methods to perform certain actions:
+
+Explain
+class Program
+{
+  static void MyMethod() 
+  {
+    // code to be executed
+  }
+} 
+Example Explained
+MyMethod() is the name of the method
+static means that the method belongs to the Program class and not an object of the Program class.
+You will learn more about objects and how to access methods through objects later in this tutorial.
+void means that this method does not have a return value. You will learn more about return values later in this chapter
+Note: In C#, it is good practice to start with an uppercase letter when naming methods, as it makes the code easier to read.
+
+Call a Method
+To call (execute) a method, write the method's name followed by two parentheses () and a semicolon;
+In the following example, MyMethod() is used to print a text (the action), when it is called:
+
+Explain
+static void MyMethod() 
+{
+  Console.WriteLine("I just got executed!");
+}
+
+static void Main(string[] args)
+{
+  MyMethod();
+}
+// Outputs "I just got executed!"
+
+Parameters and Arguments
+Information can be passed to methods as parameter. Parameters act as variables inside the method.
+They are specified after the method name, inside the parentheses. You can add as many parameters as you want, just separate them with a comma.
+example has a method that takes a string called fname as parameter. When the method is called, 
+we pass along a first name, which is used inside the method to print the full name:
+
+Explain
+static void MyMethod(string fname) 
+{
+  Console.WriteLine(fname + " Refsnes");
+}
+
+static void Main(string[] args)
+{
+  MyMethod("Liam");
+  MyMethod("Jenny");
+  MyMethod("Anja");
+}
+// Liam Refsnes
+// Jenny Refsnes
+// Anja Refsnes
+ 
+When a parameter is passed to the method, it is called an argument.example above: fname is a parameter, while Liam, Jenny and Anja are arguments.
+
+Multiple Parameters
+
+Example
+static void MyMethod(string fname, int age) 
+{
+  Console.WriteLine(fname + " is " + age);
+}
+
+static void Main(string[] args)
+{
+  MyMethod("Liam", 5);
+  MyMethod("Jenny", 8);
+  MyMethod("Anja", 31);
+}
+// Liam is 5
+// Jenny is 8
+// Anja is 31
+
+Default Parameter Value
+You can also use a default parameter value, by using the equals sign (=).
+
+If we call the method without an argument, it uses the default value ("Norway"):
+
+static void MyMethod(string country = "Norway") 
+{
+  Console.WriteLine(country);
+}
+
+static void Main(string[] args)
+{
+  MyMethod("Sweden");
+  MyMethod("India");
+  MyMethod();
+  MyMethod("USA");
+}
+// Sweden
+// India
+// Norway
+// USA
+
+Return Values
+In the previous page, we used the void keyword in all examples, which indicates that the method should not return a value.
+If you want the method to return a value, you can use a primitive data type (such as int or double) instead of void, and use the return keyword inside the method:
+
+Explain
+static int MyMethod(int x) 
+{
+  return 5 + x;
+}
+
+static void Main(string[] args)
+{
+  Console.WriteLine(MyMethod(3));
+}
+// Outputs 8 (5 + 3)
+ 
+Explain
+static int MyMethod(int x, int y) 
+{
+  return x + y;
+}
+
+static void Main(string[] args)
+{
+  Console.WriteLine(MyMethod(5, 3));
+}
+// Outputs 8 (5 + 3)
+
+Named Arguments
+It is also possible to send arguments with the key: value syntax.
+That way, the order of the arguments does not matter:
+
+static void MyMethod(string child1, string child2, string child3) 
+{
+  Console.WriteLine("The youngest child is: " + child3);
+}
+
+static void Main(string[] args)
+{
+  MyMethod(child3: "John", child1: "Liam", child2: "Liam");
+}
+// The youngest child is: John
+
+Method Overloading
+With method overloading, multiple methods can have the same name with different parameters:
+
+int MyMethod(int x)
+float MyMethod(float x)
+double MyMethod(double x, double y)
+Consider the following example, which have two methods that add numbers of different type:
+
+static int PlusMethodInt(int x, int y)
+{
+  return x + y;
+}
+
+static double PlusMethodDouble(double x, double y)
+{
+  return x + y;
+}
+
+static void Main(string[] args)
+{
+  int myNum1 = PlusMethodInt(8, 5);
+  double myNum2 = PlusMethodDouble(4.3, 6.26);
+  Console.WriteLine("Int: " + myNum1);
+  Console.WriteLine("Double: " + myNum2);
+}
+
+Instead of defining two methods that should do the same thing, it is better to overload one.
+In the example below, we overload the PlusMethod method to work for both int and double:
+
+static int PlusMethod(int x, int y)
+{
+  return x + y;
+}
+
+static double PlusMethod(double x, double y)
+{
+  return x + y;
+}
+
+static void Main(string[] args)
+{
+  int myNum1 = PlusMethod(8, 5);
+  double myNum2 = PlusMethod(4.3, 6.26);
+  Console.WriteLine("Int: " + myNum1);
+  Console.WriteLine("Double: " + myNum2);
+}
+
+C# - What is OOP?
+OOP stands for Object-Oriented Programming.
+Procedural programming is about writing procedures or methods that perform operations on the data, 
+ while object-oriented programming is about creating objects that contain both data and methods.
+
+advantages over procedural programming:
+
+OOP is faster and easier to execute
+OOP provides a clear structure for the programs
+OOP helps to keep the C# code DRY "Don't Repeat Yourself", and makes the code easier to maintain, modify and debug
+OOP makes it possible to create full reusable applications with less code and shorter development time
+Tip: The "Don't Repeat Yourself" (DRY) principle is about reducing the repetition of code. 
+
+C# - What are Classes and Objects?
+Classes and objects are the two main aspects of object-oriented programming.
+Look at the following illustration to see the difference between class and objects:
+
+class     objects
+Fruit     Apple, Banana, Mango
+
+So, a class is a template for objects, and an object is an instance of a class.
+When the individual objects are created, they inherit all the variables and methods from the class.
+
+Classes and Objects
+You learned from the previous chapter that C# is an object-oriented programming language.
+Everything in C# is associated with classes and objects, along with its attributes and methods.
+ex: in real life, a car is an object. The car has attributes, such as weight and color, and methods, such as drive and brake.
+
+A Class is like an object constructor, or a "blueprint" for creating objects.
+
+Create a Class
+To create a class, use the class keyword:
+Create a class named "Car" with a variable color:
+
+class Car 
+{
+  string color = "red";
+}
+When a variable is declared directly in a class, it is often referred to as a field (or attribute).
+It is not required, but it is a good practice to start with an uppercase first letter when naming classes. 
+Also, it is common that the name of the C# file and the class matches, as it makes our code organized. However it is not required (like in Java).
+
+Create an Object
+An object is created from a class. We have already created the class named Car, so now we can use this to create objects.
+To create an object of Car, specify the class name, followed by the object name, and use the keyword new:
+
+Create an object called "myObj" and use it to print the value of color:
+
+class Car 
+{
+  string color = "red";
+
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    Console.WriteLine(myObj.color);
+  }
+}
+
+Multiple Objects
+You can create multiple objects of one class:
+
+Create two objects of Car:
+
+class Car
+{
+  string color = "red";
+  static void Main(string[] args)
+  {
+    Car myObj1 = new Car();
+    Car myObj2 = new Car();
+    Console.WriteLine(myObj1.color);
+    Console.WriteLine(myObj2.color);
+  }
+} 
+ 
+Using Multiple Classes
+You can also create an object of a class and access it in another class. This is often used for better organization of classes 
+(one class has all the fields and methods, while the other class holds the Main() method (code to be executed)).
+
+prog2.cs
+prog.cs
+prog2.cs
+class Car 
+{
+  public string color = "red";
+}
+prog.cs
+class Program
+{
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    Console.WriteLine(myObj.color);
+  }
+}
+
+Constructors
+A constructor is a special method that is used to initialize objects. The advantage of a constructor, 
+is that it is called when an object of a class is created. It can be used to set initial values for fields:
+
+Create a constructor:
+Explain
+// Create a Car class
+class Car
+{
+  public string model;  // Create a field
+
+  // Create a class constructor for the Car class
+  public Car()
+  {
+    model = "Mustang"; // Set the initial value for model
+  }
+
+  static void Main(string[] args)
+  {
+    Car Ford = new Car();  // Create an object of the Car Class (this will call the constructor)
+    Console.WriteLine(Ford.model);  // Print the value of model
+  }
+}
+// Outputs "Mustang"
+ 
+Note that the constructor name must match the class name, and it cannot have a return type (like void or int).
+Also note that the constructor is called when the object is created.
+All classes have constructors by default: if you do not create a class constructor yourself, C# creates one for you.
+ However, then you are not able to set initial values for fields.
+Constructors save time! Take a look at the last example on this page to really understand why.
+
+Constructor Parameters
+Constructors can also take parameters, which is used to initialize fields.
+
+ex adds a string modelName parameter to the constructor. Inside the constructor we set model to modelName (model=modelName). 
+When we call the constructor, we pass a parameter to the constructor ("Mustang"), which will set the value of model to "Mustang":
+
+Explain
+class Car
+{
+  public string model;
+
+  // Create a class constructor with a parameter
+  public Car(string modelName)
+  {
+    model = modelName;
+  }
+
+  static void Main(string[] args)
+  {
+    Car Ford = new Car("Mustang");
+    Console.WriteLine(Ford.model);
+  }
+}
+// Outputs "Mustang"
+-------------------------
+Access Modifiers
+By now, you are quite familiar with the public keyword that appears in many of our examples:
+
+public string color;
+The public keyword is an access modifier, which is used to set the access level/visibility for classes, fields, methods and properties.
+
+C# has the following access modifiers:
+
+Modifier	Description
+public	The code is accessible for all classes
+private	The code is only accessible within the same class
+protected	The code is accessible within the same class, or in a class that is inherited from that class. You will learn more about inheritance in a later chapter
+internal	The code is only accessible within its own assembly, but not from another assembly. You will learn more about this in a later chapter
+There's also two combinations: protected internal and private protected.
+
+For now, lets focus on public and private modifiers.
+
+Private Modifier
+If you declare a field with a private access modifier, it can only be accessed within the same class:
+
+ExampleGet your own C# Server
+class Car
+{
+
+Explain
+
+  private string model = "Mustang";
+
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    Console.WriteLine(myObj.model);
+  }
+}
+The output will be:
+
+Mustang
+
+If you try to access it outside the class, an error will occur:
+
+Example
+
+Explain
+class Car
+{
+  private string model = "Mustang";
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    Console.WriteLine(myObj.model);
+  }
+}
+ 
+The output will be:
+
+'Car.model' is inaccessible due to its protection level
+The field 'Car.model' is assigned but its value is never used
+
+Public Modifier
+If you declare a field with a public access modifier, it is accessible for all classes:
+
+Example
+
+Explain
+class Car
+{
+  public string model = "Mustang";
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Car myObj = new Car();
+    Console.WriteLine(myObj.model);
+  }
+}
+ 
+The output will be:
+
+Mustang
+
+Why Access Modifiers?
+To control the visibility of class members (the security level of each individual class and class member).
+
+To achieve "Encapsulation" - which is the process of making sure that "sensitive" data is hidden from users. This is done by declaring fields as private. You will learn more about this in the next chapter.
+
+Properties and Encapsulation
+Before we start to explain properties, you should have a basic understanding of "Encapsulation".
+
+The meaning of Encapsulation, is to make sure that "sensitive" data is hidden from users. To achieve this, you must:
+
+declare fields/variables as private
+provide public get and set methods, through properties, to access and update the value of a private field
+Properties
+You learned from the previous chapter that private variables can only be accessed within the same class (an outside class has no access to it). However, sometimes we need to access them - and it can be done with properties.
+
+A property is like a combination of a variable and a method, and it has two methods: a get and a set method:
+
+ExampleGet your own C# Server
+
+Explain
+class Person
+{
+  private string name; // field
+
+  public string Name   // property
+  {
+    get { return name; }   // get method
+    set { name = value; }  // set method
+  }
+} 
+ 
+ 
+Example explained
+The Name property is associated with the name field. It is a good practice to use the same name for both the property and the private field, but with an uppercase first letter.
+
+The get method returns the value of the variable name.
+
+The set method assigns a value to the name variable. The value keyword represents the value we assign to the property.
+
+If you don't fully understand it, take a look at the example below.
+
+Now we can use the Name property to access and update the private field of the Person class:
+
+Example
+
+Explain
+class Person
+{
+  private string name; // field
+  public string Name   // property
+  {
+    get { return name; }
+    set { name = value; }
+  }
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Person myObj = new Person();
+    myObj.Name = "Liam";
+    Console.WriteLine(myObj.Name);
+  }
+}
+ 
+ 
+ 
+ 
+ 
+The output will be:
+
+Liam
+
+Automatic Properties (Short Hand)
+C# also provides a way to use short-hand / automatic properties, where you do not have to define the field for the property, and you only have to write get; and set; inside the property.
+
+The following example will produce the same result as the example above. The only difference is that there is less code:
+
+Example
+Using automatic properties:
+
+class Person
+{
+  public string Name  // property
+  { get; set; }
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    Person myObj = new Person();
+    myObj.Name = "Liam";
+    Console.WriteLine(myObj.Name);
+  }
+}
+ 
+ 
+The output will be:
+
+Liam
+
+Why Encapsulation?
+Better control of class members (reduce the possibility of yourself (or others) to mess up the code)
+Fields can be made read-only (if you only use the get method), or write-only (if you only use the set method)
+Flexible: the programmer can change one part of the code without affecting other parts
+Increased security of data
+
+Inheritance (Derived and Base Class)
+In C#, it is possible to inherit fields and methods from one class to another. We group the "inheritance concept" into two categories:
+
+Derived Class (child) - the class that inherits from another class
+Base Class (parent) - the class being inherited from
+To inherit from a class, use the : symbol.
+
+In the example below, the Car class (child) inherits the fields and methods from the Vehicle class (parent):
+
+ExampleGet your own C# Server
+
+Explain
+class Vehicle  // base class (parent) 
+{
+  public string brand = "Ford";  // Vehicle field
+  public void honk()             // Vehicle method 
+  {                    
+    Console.WriteLine("Tuut, tuut!");
+  }
+}
+
+class Car : Vehicle  // derived class (child)
+{
+  public string modelName = "Mustang";  // Car field
+}
+
+class Program
+{
+  static void Main(string[] args)
+  {
+    // Create a myCar object
+    Car myCar = new Car();
+
+    // Call the honk() method (From the Vehicle class) on the myCar object
+    myCar.honk();
+
+    // Display the value of the brand field (from the Vehicle class) and the value of the modelName from the Car class
+    Console.WriteLine(myCar.brand + " " + myCar.modelName);
+  }
+}
+ 
+
+Why And When To Use "Inheritance"?
+- It is useful for code reusability: reuse fields and methods of an existing class when you create a new class.
+
+Tip: Also take a look at the next chapter, Polymorphism, which uses inherited methods to perform different tasks.
+
+Polymorphism and Overriding Methods
+Polymorphism means "many forms", and it occurs when we have many classes that are related to each other by inheritance.
+
+Like we specified in the previous chapter; Inheritance lets us inherit fields and methods from another class. Polymorphism uses those methods to perform different tasks. This allows us to perform a single action in different ways.
+
+For example, think of a base class called Animal that has a method called animalSound(). Derived classes of Animals could be Pigs, Cats, Dogs, Birds - And they also have their own implementation of an animal sound (the pig oinks, and the cat meows, etc.):
+
+ExampleGet your own C# Server
+
+Explain
+class Animal  // Base class (parent) 
+{
+  public void animalSound() 
+  {
+    Console.WriteLine("The animal makes a sound");
+  }
+}
+
+class Pig : Animal  // Derived class (child) 
+{
+  public void animalSound() 
+  {
+    Console.WriteLine("The pig says: wee wee");
+  }
+}
+
+class Dog : Animal  // Derived class (child) 
+{
+  public void animalSound() 
+  {
+    Console.WriteLine("The dog says: bow wow");
+  }
+}
+
+Why And When To Use "Inheritance" and "Polymorphism"?
+- It is useful for code reusability: reuse fields and methods of an existing class when you create a new class.
+
+Abstract Classes and Methods
+Data abstraction is the process of hiding certain details and showing only essential information to the user.
+Abstraction can be achieved with either abstract classes or interfaces (which you will learn more about in the next chapter).
+
+The abstract keyword is used for classes and methods:
+
+Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).
+
+Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the derived class (inherited from).
+An abstract class can have both abstract and regular methods:
+
+
+Explain
+abstract class Animal 
+{
+  public abstract void animalSound();
+  public void sleep() 
+  {
+    Console.WriteLine("Zzz");
+  }
+}
+
+Why And When To Use Abstract Classes and Methods?
+To achieve security - hide certain details and only show the important details of an object.
+
+Note: Abstraction can also be achieved with Interfaces, which you will learn more about in the next chapter.
+
+Interfaces
+Another way to achieve abstraction in C#, is with interfaces.
+
+An interface is a completely "abstract class", which can only contain abstract methods and properties (with empty bodies):
+
+ExampleGet your own C# Server
+
+Explain
+// interface
+interface Animal 
+{
+  void animalSound(); // interface method (does not have a body)
+  void run(); // interface method (does not have a body)
+}
+ 
+It is considered good practice to start with the letter "I" at the beginning of an interface, as it makes it easier for yourself and others to remember that it is an interface and not a class.
+
+By default, members of an interface are abstract and public.
+
+Note: Interfaces can contain properties and methods, but not fields.
+
+To access the interface methods, the interface must be "implemented" (kinda like inherited) by another class. To implement an interface, use the : symbol (just like with inheritance). The body of the interface method is provided by the "implement" class. Note that you do not have to use the override keyword when implementing an interface:
+
+Example
+// Interface
+interface IAnimal 
+{
+  void animalSound(); // interface method (does not have a body)
+}
+
+// Pig "implements" the IAnimal interface
+class Pig : IAnimal 
+{
+  public void animalSound() 
+  {
+    // The body of animalSound() is provided here
+    Console.WriteLine("The pig says: wee wee");
+  }
+}
+
+class Program 
+{
+  static void Main(string[] args) 
+  {
+    Pig myPig = new Pig();  // Create a Pig object
+    myPig.animalSound();
+  }
+} 
+ 
+
+Notes on Interfaces:
+Like abstract classes, interfaces cannot be used to create objects (in the example above, it is not possible to create an "IAnimal" object in the Program class)
+Interface methods do not have a body - the body is provided by the "implement" class
+On implementation of an interface, you must override all of its methods
+Interfaces can contain properties and methods, but not fields/variables
+Interface members are by default abstract and public
+An interface cannot contain a constructor (as it cannot be used to create objects)
+Why And When To Use Interfaces?
+1) To achieve security - hide certain details and only show the important details of an object (interface).
+
+2) C# does not support "multiple inheritance" (a class can only inherit from one base class). However, it can be achieved with interfaces, because the class can implement multiple interfaces. Note: To implement multiple interfaces, separate them with a comma (see example below).
+
+Multiple Interfaces
+To implement multiple interfaces, separate them with a comma:
+
+C# Enums
+An enum is a special "class" that represents a group of constants (unchangeable/read-only variables).
+
+To create an enum, use the enum keyword (instead of class or interface), and separate the enum items with a comma:
+
+ExampleGet your own C# Server
+
+Explain
+enum Level 
+{
+  Low,
+  Medium,
+  High
+}
+You can access enum items with the dot syntax:
+
+Level myVar = Level.Medium;
+Console.WriteLine(myVar);
+Enum is short for "enumerations", which means "specifically listed".
+
+Enum inside a Class
+You can also have an enum inside a class:
+
+Example
+
+Explain
+class Program
+{
+  enum Level
+  {
+    Low,
+    Medium,
+    High
+  }
+  static void Main(string[] args)
+  {
+    Level myVar = Level.Medium;
+    Console.WriteLine(myVar);
+  }
+}
+The output will be:
+
+Medium
+Enum Values
+By default, the first item of an enum has the value 0. The second has the value 1, and so on.
+
+To get the integer value from an item, you must explicitly convert the item to an int:
+
+Example
+
+Explain
+enum Months
+{
+  January,    // 0
+  February,   // 1
+  March,      // 2
+  April,      // 3
+  May,        // 4
+  June,       // 5
+  July        // 6
+}
+
+static void Main(string[] args)
+{
+  int myNum = (int) Months.April;
+  Console.WriteLine(myNum);
+}
+The output will be:
+
+3
+You can also assign your own enum values, and the next items will update their numbers accordingly:
+
+Example
+
+Explain
+enum Months
+{
+  January,    // 0
+  February,   // 1
+  March=6,    // 6
+  April,      // 7
+  May,        // 8
+  June,       // 9
+  July        // 10
+}
+
+static void Main(string[] args)
+{
+  int myNum = (int) Months.April;
+  Console.WriteLine(myNum);
+}
+The output will be:
+
+7
+Enum in a Switch Statement
+Enums are often used in switch statements to check for corresponding values:
+
+Example
+enum Level 
+{
+  Low,
+  Medium,
+  High
+}
+
+static void Main(string[] args) 
+{
+  Level myVar = Level.Medium;
+  switch(myVar) 
+  {
+    case Level.Low:
+      Console.WriteLine("Low level");
+      break;
+    case Level.Medium:
+       Console.WriteLine("Medium level");
+      break;
+    case Level.High:
+      Console.WriteLine("High level");
+      break;
+  }
+}
+The output will be:
+
+Medium level
+Why And When To Use Enums?
+Use enums when you have values that you know aren't going to change, like month days, days, colors, deck of cards, etc.
+
+Working With Files
+The File class from the System.IO namespace, allows us to work with files:
+
+ExampleGet your own C# Server
+using System.IO;  // include the System.IO namespace
+
+File.SomeFileMethod();  // use the file class with methods
+The File class has many useful methods for creating and getting information about files. For example:
+
+Method	Description
+AppendText()	Appends text at the end of an existing file
+Copy()	Copies a file
+Create()	Creates or overwrites a file
+Delete()	Deletes a file
+Exists()	Tests whether the file exists
+ReadAllText()	Reads the contents of a file
+Replace()	Replaces the contents of a file with the contents of another file
+WriteAllText()	Creates a new file and writes the contents to it. If the file already exists, it will be overwritten.
+For a full list of File methods, go to Microsoft .Net File Class Reference.
+
+Write To a File and Read It
+In the following example, we use the WriteAllText() method to create a file named "filename.txt" and write some content to it. Then we use the ReadAllText() method to read the contents of the file:
+
+Example
+using System.IO;  // include the System.IO namespace
+
+string writeText = "Hello World!";  // Create a text string
+File.WriteAllText("filename.txt", writeText);  // Create a file and write the content of writeText to it
+
+string readText = File.ReadAllText("filename.txt");  // Read the contents of the file
+Console.WriteLine(readText);  // Output the content
+The output will be:
+
+Hello World!
+
+C# Exceptions
+When executing C# code, different errors can occur: coding errors made by the programmer, errors due to wrong input, or other unforeseeable things.
+
+When an error occurs, C# will normally stop and generate an error message. The technical term for this is: C# will throw an exception (throw an error).
+
+C# try and catch
+The try statement allows you to define a block of code to be tested for errors while it is being executed.
+
+The catch statement allows you to define a block of code to be executed, if an error occurs in the try block.
+
+The try and catch keywords come in pairs:
+
+SyntaxGet your own C# Server
+
+Explain
+try 
+{
+  //  Block of code to try
+}
+catch (Exception e)
+{
+  //  Block of code to handle errors
+}
+Consider the following example, where we create an array of three integers:
+
+This will generate an error, because myNumbers[10] does not exist.
+
+int[] myNumbers = {1, 2, 3};
+Console.WriteLine(myNumbers[10]); // error!
+The error message will be something like this:
+
+System.IndexOutOfRangeException: 'Index was outside the bounds of the array.'
+If an error occurs, we can use try...catch to catch the error and execute some code to handle it.
+
+In the following example, we use the variable inside the catch block (e) together with the built-in Message property, which outputs a message that describes the exception:
+
+Example
+
+Explain
+try
+{
+  int[] myNumbers = {1, 2, 3};
+  Console.WriteLine(myNumbers[10]);
+}
+catch (Exception e)
+{
+  Console.WriteLine(e.Message);
+}
+The output will be:
+
+Index was outside the bounds of the array.
+You can also output your own error message:
+
+Example
+
+Explain
+try
+{
+  int[] myNumbers = {1, 2, 3};
+  Console.WriteLine(myNumbers[10]);
+}
+catch (Exception e)
+{
+  Console.WriteLine("Something went wrong.");
+}
+The output will be:
+
+Something went wrong.
+Finally
+The finally statement lets you execute code, after try...catch, regardless of the result:
+
+Example
+
+Explain
+try
+{
+  int[] myNumbers = {1, 2, 3};
+  Console.WriteLine(myNumbers[10]);
+}
+catch (Exception e)
+{
+  Console.WriteLine("Something went wrong.");
+}
+finally
+{
+  Console.WriteLine("The 'try catch' is finished.");
+}
+The output will be:
+
+Something went wrong.
+The 'try catch' is finished.
+The throw keyword
+The throw statement allows you to create a custom error.
+
+The throw statement is used together with an exception class. There are many exception classes available in C#: ArithmeticException, FileNotFoundException, IndexOutOfRangeException, TimeOutException, etc:
+
+Example
+static void checkAge(int age)
+{
+  if (age < 18)
+  {
+    throw new ArithmeticException("Access denied - You must be at least 18 years old.");
+  }
+  else
+  {
+    Console.WriteLine("Access granted - You are old enough!");
+  }
+}
+
+static void Main(string[] args)
+{
+  checkAge(15);
+}
+The error message displayed in the program will be:
+
+System.ArithmeticException: 'Access denied - You must be at least 18 years old.'
+
+If age was 20, you would not get an exception:
+
+Example
+checkAge(20);
+The output will be:
+
+Access granted - You are old enough!
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1489 @@
+ASP and ASP.NET Tutorials
+ASP stands for Active Server Pages
+
+ASP is a development framework for building web pages.
+
+ASP supports many different development models:
+
+Classic ASP
+ASP.NET Web Forms
+ASP.NET MVC
+ASP.NET Web Pages
+ASP.NET API
+ASP.NET Core
+The ASP Technology
+ASP and ASP.NET are server side technologies.
+
+Both technologies enable computer code to be executed by an Internet server.
+
+When a browser requests an ASP or ASP.NET file, the ASP engine reads the file, executes any code in the file, and returns the result to the browser.
+
+Classic ASP - Active Server Pages
+ASP (aka Classic ASP) was introduced in 1998 as Microsoft's first server side scripting language.
+
+Classic ASP pages have the file extension .asp and are normally written in VBScript.
+
+ASP.NET
+ASP.NET was released in 2002 as a successor to Classic ASP.
+
+ASP.NET pages have the extension .aspx and are normally written in C# (C sharp).
+
+ASP.NET 4.6 is the latest official version of ASP.NET.
+
+ASP.NET 5 was expected to be an important redesign of ASP.NET.
+
+However, the development of ASP.NET 5 was stopped in favor of ASP.NET Core.
+
+ASP.NET Web Pages
+ASP.NET Web Pages is an SPA application model (Single Page Application).
+
+The SPA model is quite similar to PHP and Classic ASP.
+
+ASP.NET Web Pages is being merged into the new ASP.NET Core.
+
+ASP.NET MVC
+ASP.NET MVC is an MVC application model (Model-View-Controller).
+
+ASP.NET MVC is being merged into the new ASP.NET Core.
+
+ASP.NET MVC is not covered in this tutorial.
+
+My Learning
+Track your progress with the free "My Learning" program here at W3Schools.
+
+Log in to your account, and start earning points!
+
+This is an optional feature. You can study at W3Schools without using My Learning.
+
+
+ASP.NET Web API
+ASP.NET API is an API application model (Application Programming Interface).
+
+ASP.NET API is being merged into the new ASP.NET Core.
+
+ASP.NET API is not covered in this tutorial.
+
+ASP.NET Web Forms
+ASP.NET Web Forms is an event driven application model.
+
+ASP.NET Web Forms is not a part of the new ASP.NET Core.
+
+ASP.NET Web Forms is not covered in this tutorial.
+
+ASP.NET Core
+ASP.NET Core was released in 2016.
+
+ASP.NET Core merges ASP.NET MVC, ASP.NET Web API, and ASP.NET Web Pages into one application framework.
+
+ASP.NET Core is not covered in this tutorial.
+
+Easy Learning with "Run Example"
+Our "Run Example" tool displays the ASP.NET code and the HTML output simultaneously.
+
+Click on the "Run Example" button to see how it works:
+
+Web Pages Example
+<html>
+<body>
+     <h1>Hello Web Pages</h1>
+     <p>The time is @DateTime.Now</p>
+</body>
+</html>
+ASP.NET Web Pages
+Web Pages is one of many programming models for creating ASP.NET web sites and web applications.
+
+Web Pages provides an easy way to combine HTML, CSS, and server code:
+
+Easy to learn, understand, and use
+Uses an SPA application model (Single Page Application)
+Similar to PHP and Classic ASP
+VB (Visual Basic) or C# (C sharp) scripting languages
+In addition, Web Pages applications are easily extendable with programmable helpers for databases, videos, graphics, social networking and more.
+
+Web Pages Tutorial
+If you are new to ASP.NET, Web Pages is a perfect place to start.
+
+In this Web Pages tutorial you will learn how to combine HTML, CSS, JavaScript and server code, using server code written in VB or C# .
+
+You will also learn how to extend your web pages with programmable Web Helpers.
+
+Web Pages Examples
+Learn by examples!
+
+Because ASP.NET code is executed on the server, you cannot view the code in your browser. You will only see the output as plain HTML.
+
+At W3Schools every example displays the hidden ASP.NET code. This makes it easier for you to understand how it works.
+
+Web Pages Examples
+
+Web Pages References
+At the end of this tutorial you will find a complete set of ASP.NET references with objects, components, properties and methods.
+
+ASP.NET Web Pages use Razor markup with C# or VB code
+
+Razor Markup
+Razor is a simple markup syntax for embedding server code (C# or VB) into ASP.NET web pages.
+
+Example
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+     <meta charset="utf-8" />
+     <title>Web Pages Demo</title>
+</head>
+<body>
+     <h1>Hello Web Pages</h1>
+     <p>The time is @DateTime.Now</p>
+</body>
+</html>
+The page above contains both ordinary HTML markup and Razor markup.
+
+Razor Syntax for C#
+C# code blocks are enclosed in @{ ... }
+Inline expressions (variables or functions) start with @
+Code statements end with semicolon
+Variables are declared with the var keyword, or the datatype (int, string, etc.)
+Strings are enclosed with quotation marks
+C# code is case sensitive
+C# files have the extension .cshtml
+C# Example
+<!-- Single statement block -->
+@{ var myMessage = "Hello World"; }
+
+<!-- Inline expression or variable -->
+<p>The value of myMessage is: @myMessage</p>
+
+<!-- Multi-statement block -->
+@{
+var greeting = "Welcome to our site!";
+var weekDay = DateTime.Now.DayOfWeek;
+var greetingMessage = greeting + " Today is: " + weekDay;
+}
+<p>The greeting is: @greetingMessage</p>
+Razor Syntax for VB
+VB code blocks are enclosed in @Code ... End Code
+Inline expressions (variables or functions) start with @
+Variables are declared with the Dim keyword
+Strings are enclosed with quotation marks
+VB code is not case sensitive
+VB files have the extension .vbhtml
+
+With Web Pages it is easy to create a web site with a consistent layout.
+
+A Consistent Look
+On the Internet you will discover many web sites with a consistent look and feel:
+
+Every page have the same header
+Every page have the same footer
+Every page have the same style and layout
+With Web Pages this can be done very efficiently. You can have reusable blocks of content (content blocks), like headers and footers, in separate files.
+
+You can also define a consistent layout for all your pages, using a layout template (layout file).
+
+Content Blocks
+Many websites have content that is displayed on every page (like headers and footers).
+
+With Web Pages you can use the @RenderPage() method to import content from separate files.
+
+Content block (from another file) can be imported anywhere in a web page, and can contain text, markup, and code, just like any regular web page.
+
+Using common headers and footers as an example, this saves you a lot of work. You don't have to write the same content in every page, and when you change the header or footer files, the content is updated in all your pages.
+
+This is how it looks in code:
+
+Example
+<html>
+<body>
+@RenderPage("header.cshtml")
+<h1>Hello Web Pages</h1>
+<p>This is a paragraph</p>
+@RenderPage("footer.cshtml")
+</body>
+</html>
+Using a Layout Page
+In the previous section, you saw that including the same content in many web pages is easy.
+
+Another approach to creating a consistent look is to use a layout page. A layout page contains the structure, but not the content, of a web page. When a web page (content page) is linked to a layout page, it will be displayed according to the layout page (template).
+
+The layout page is just like a normal web page, except from a call to the @RenderBody() method where the content page will be included.
+
+Each content page must start with a Layout directive.
+
+This is how it looks in code:
+
+Layout Page:
+<html>
+<body>
+<p>This is header text</p>
+@RenderBody()
+<p>&copy; 2014 W3Schools. All rights reserved.</p>
+</body>
+</html>
+
+Any Web Page:
+@{Layout="Layout.cshtml";}
+
+<h1>Welcome to W3Schools</h1>
+
+<p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laborisnisi ut aliquip ex ea commodo consequat.
+</p>
+D.R.Y. - Don't Repeat Yourself
+With two ASP.NET tools, Content Blocks and Layout Pages, you can give your web applications a consistent look.
+
+These tools also save you a lot of work, since you don't have to repeat the same information on all pages. Centralizing markup, style, and code makes web applications much more manageable and easier to maintain.
+
+Preventing Files from Being Browsed
+With ASP.NET, files with a name that starts with an underscore cannot be browsed from the web.
+
+If you want to prevent your content blocks or layout files from being viewed by your users, rename the files to:
+
+_header.cshtml
+
+_footer.cshtml
+
+_Layout.cshtml
+
+Hiding Sensitive Information
+With ASP.NET, the common way to hide sensitive information (database passwords, email passwords, etc.) is to keep the information in a separate file named "_AppStart".
+
+_AppStart.cshtml
+@{
+WebMail.SmtpServer = "mailserver.example.com";
+WebMail.EnableSsl = true;
+WebMail.UserName = "username@example.com";
+WebMail.Password = "your-password";
+WebMail.From = "your-name-here@example.com";
+}
+
+This chapter is about folders and folder paths.
+
+In this chapter you will learn:
+
+About Logical and Physical folder structures
+About Virtual and Physical names
+About web URLs and Paths
+Logical Folder Structure
+Below is a typical folder structure for an ASP.NET web pages web site:
+
+Folders
+The "Account" folder contains logon and security files
+The "App_Data" folder contains databases and data files
+The "Images" folder contains images
+The "Scripts" folder contains browser scripts
+The "Shared" folder contains common files (like layout and style files)
+Physical Folder Structure
+The physical structure for the "Images" folder at the website above might look like this on a computer:
+
+C:\Johnny\Documents\MyWebSites\Demo\Images
+Virtual and Physical Names
+From the example above:
+
+The virtual name of a web picture might be "Images/pic31.jpg".
+
+But the physical name is "C:\Johnny\Documents\MyWebSites\Demo\Images\pic31.jpg"
+
+URLs and Paths
+URLs are used to access files from the web: https://www.w3schools.com/html/html5_intro.asp
+
+The URL corresponds to a physical file on a server: C:\MyWebSites\w3schools\html\html5_intro.asp
+
+A virtual path is shorthand to represent physical paths. If you use virtual paths, you can move your pages to a different domain (or server) without having to update the paths.
+
+URL	https://www.w3schools.com/html/html5_intro.asp
+Server name	w3schools
+Virtual path	/html/html5_intro.asp
+Physical path	C:\MyWebSites\w3schools\html\html5_intro.asp
+The root on a disk drive is written like C:\, but the root on a web site is  / (forward slash).
+
+The virtual path of a web folder is (almost) never the same as the physical folder.
+
+In your code you will, reference both the physical path and the virtual path, depending on what you are coding.
+
+ASP.NET has 3 tools for working with folder paths: the ~ operator, the Server.MapPath method, and the Href method.
+
+The ~ Operator
+To specify the virtual root in programming code, use the ~ operator.
+
+If you use the ~ operator, instead of a path, you can move your website to a different folder or location without changing any code:
+
+var myImagesFolder = "~/images";
+var myStyleSheet = "~/styles/StyleSheet.css";
+The Server.MapPath Method
+The Server.MapPath method converts a virtual path (/default.cshtml) to a physical path that the server can understand (C:\Johnny\MyWebSited\Demo\default.cshtml).
+
+You will use this method when you need to open data files located on the server (data files can only be accessed with a full physical path):
+
+var pathName = "~/dataFile.txt";
+var fileName = Server.MapPath(pathName);
+You will learn more about reading from (and writing to) data files on the server in the next chapter of this tutorial.
+
+The Href Method
+The Href method converts a path used in the code to a path that the browser can understand (the browser cannot understand the ~ operator).
+
+You use the Href method to create paths to resources like image files, and CSS files.
+
+You will often use this method in HTML <a>, <img>, and <link> elements:
+
+This chapter is about the global pages AppStart and PageStart.
+
+Before Web Startup: _AppStart
+Most server side code are written inside individual web pages. For example, if a web page contains an input form, the web page typically contains server code for reading the data.
+
+However, by creating a page named _AppStart in the root of your site, you can have startup code executed before the site starts. If this page exists, ASP.NET runs it the first time any page in the site is requested.
+
+Typical use for _AppStart is startup code and initialization of global values like counters and global names.
+
+Note 1: _AppStart should have the same file extension as your web pages, like: _AppStart.cshtml. 
+
+Note 2: _AppStart has an underscore prefix. Because of this, the files cannot be browsed directly.
+
+Before Every Page: _PageStart
+Just like _AppStart runs before your site starts, you can write code that runs before any page in each folder.
+
+For each folder in your web, you can add a file named _PageStart.
+
+Typical use for _PageStart is setting the layout page for all pages in a folder, or checking that a user is logged in before running a page.
+
+How Does it Work?
+The following diagram shows how it works:
+
+PageStart
+
+When a request comes in, ASP.NET checks whether _AppStart exists. If so, and this is the first request to the site, _AppStart runs.
+
+Then ASP.NET checks whether _PageStart exists. If so, _PageStart runs, before the requested page.
+
+If you include a call to RunPage() inside _PageStart you specify where you want the requested page to run. If not, the _PageStart runs before the requested page.
+
+Razor Example - Displaying Images
+Suppose you have 3 images in your image folder, and you want to display images dynamically by the users choice.
+
+This is easily done by a little Razor code.
+
+If you have an image called "Photo1.jpg" in your images folder on your web site, you can display the image using an HTML <img> element like this:
+
+<img src="images/Photo1.jpg" alt="Sample" />
+The example below shows how to display a selected picture which the user selects from a drop-down list:  
+
+Razor Example
+@{
+var imagePath="";
+if (Request["Choice"] != null)
+   {imagePath="images/" + Request["Choice"];}
+}
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Display Images</h1>
+<form method="post" action="">
+I want to see:
+<select name="Choice">
+  <option value="Photo1.jpg">Photo 1</option>
+  <option value="Photo2.jpg">Photo 2</option>
+  <option value="Photo3.jpg">Photo 3</option>
+</select>
+<input type="submit" value="Submit" />
+@if (imagePath != "")
+{
+<p>
+<img src="@imagePath" alt="Sample" />
+</p>
+} 
+</form>
+</body>
+</html>
+Example explained
+The server creates a variable called imagePath.
+
+The HTML page has a drop-down list (a <select> element) named Choice. It lets the user select a friendly name (like Photo 1), and passes a file name (like Photo1.jpg) when the page is submitted to the web server.
+
+The Razor code reads the value of Choice by Request["Choice"]. If it has a value the code constructs a path to the image images/Photo1.jpg, and stores it in the variable imagePath.
+
+In the HTML page there is an <img> element to display the image. The src attribute is set to the value of the imagePath variable when the page displays.
+
+The <img> element is in an if block to prevent trying to display an image with no name (like the first time the page is displayed).
+
+The Page Object
+You have already seen some Page Object methods in use:
+
+@RenderPage("header.cshtml")
+
+@RenderBody()
+In the previous chapter you saw two Page Object properties being used (IsPost, and Request):
+
+If (IsPost) {
+
+if (Request["Choice"] != null) {
+Some Page Object Methods
+Method	Description
+href	Builds a URL using the specified parameters
+RenderBody()	Renders the portion of a content page that is not within a named section (In layout pages)
+RenderPage(page)	Renders the content of one page within another page
+RenderSection(section)	Renders the content of a named section (In layout pages)
+Write(object)	Writes the object as an HTML-encoded string
+WriteLiteral	Writes an object without HTML-encoding it first.
+Some Page Object Properties
+Property	Description
+IsPost	Returns true if the HTTP data transfer method used by the client is a POST request
+Layout	Gets or sets the path of a layout page
+Page	Provides property-like access to data shared between pages and layout pages
+Request	Gets the HttpRequest object for the current HTTP request
+Server	Gets the HttpServerUtility object that provides web-page processing methods
+The Page Property (of the Page Object)
+The Page property of the Page Object, provides property-like access to data shared between pages and layout pages.
+
+You can use (add) your own properties to the Page property:
+
+Page.Title
+Page.Version
+Page.anythingyoulike
+The pages property is very helpful. For instance, it makes it possible to set the page title in content files, and use it in the layout file:
+
+Working with Text Files
+Sometimes you will want to access data stored in text files.
+
+Text files used to store data is often called flat files.
+
+Common flat file formats are .txt, .xml, and .csv (comma-delimited values).
+
+In this chapter you will learn:
+
+How to read and display data from a text file
+Add a Text File Manually
+In the example to follow, you will need a text file to work with.
+
+On your web site, if you don't have an App_Data folder, create one.
+
+In the App_Data folder, create a new file named Persons.txt.
+
+Add the following content to the file:
+
+Persons.txt
+George,Lucas
+Steven,Spielberg
+Alfred,Hitchcock
+Displaying Data from a Text File
+The example below shows how to display data from a text file:  
+
+Example
+@{
+var dataFile = Server.MapPath("~/App_Data/Persons.txt");
+Array userData = File.ReadAllLines(dataFile);
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Reading Data from a File</h1>
+@foreach (string dataLine in userData)
+{
+  foreach (string dataItem in dataLine.Split(','))
+  {@dataItem <text>&nbsp;</text>}
+  <br />
+}
+</body>
+</html>
+Example explained
+Server.MapPath finds the exact text file path.
+
+File.ReadAllLines opens the text file and reads all lines from the file into an array.
+
+For each dataItem in each dataline of the array the data is displayed.
+
+Displaying Data from an Excel File
+With Microsoft Excel, you can save a spreadsheet as a comma separated text file (.csv file). When you do so, each row in the spreadsheet is saved as a text line, and each data column is separated by a comma.
+
+You can use the example above to read an Excel .csv file (just change the file name to the name of the Excel file).
+
+What We Will Do
+In this chapter we will:
+
+Create a web page to list data from a database
+Displaying Data from Database
+With Web Pages, you can easily display data from a database.
+
+You can connect to an existing database, or create a new database from scratch.
+
+In this example we will connect to an existing SQL Server Compact database.
+
+Adding a Customers Page
+In the "DemoWebPages" folder, create a new CSHTML file named "Products.cshtml".
+
+Replace the code in the file with the code from the example below:
+
+Products.cshtml
+@{
+var db = Database.Open("SmallBakery"); 
+var selectQueryString = "SELECT * FROM Product ORDER BY Name"; 
+}
+<html> 
+<body> 
+<h1>Small Bakery Products</h1> 
+<table> 
+<tr>
+<th>Id</th> 
+<th>Product</th> 
+<th>Description</th> 
+<th>Price</th> 
+</tr>
+@foreach(var row in db.Query(selectQueryString))
+{
+<tr> 
+<td>@row.Id</td> 
+<td>@row.Name</td> 
+<td>@row.Description</td> 
+<td align="right">@row.Price</td> 
+</tr> 
+}
+</table> 
+</body> 
+</html>
+Example Explained
+The Database.Open(name) method will connect to a database in two steps:
+
+First, it searches the application's App_Data folder for a database that matches the name parameter without the file-name extension.
+
+If no file is found, it looks for a "connection string" in the application's Web.config file.
+
+(A connection string contains information about how to connect to a database. It can include a file path, or the name of an SQL database, with full user name and password)
+
+This two-step search makes it possible to test the application with a local database, and run the application on a web host using a connection string.
+
+ASP.NET Database Object Reference
+Method	Description
+Database.Execute(SQLstatement [, parameters])	Executes SQLstatement (with optional parameters) such as INSERT, DELETE, or UPDATE and returns a count of affected records.
+Database.GetLastInsertId()	Returns the identity column from the most recently inserted row.
+Database.Open(filename)
+Database.Open(connectionStringName)	Opens either the specified database file or the database specified using a named connection string from the Web.config file.
+Database.OpenConnectionString(connectionString)	Opens a database using the connection string. (This contrasts with Database.Open, which uses a connection string name.)
+Database.Query(SQLstatement[, parameters])	Queries the database using SQLstatement (optionally passing parameters) and returns the results as a collection.
+Database.QuerySingle(SQLstatement [, parameters])	Executes SQLstatement (with optional parameters) and returns a single record.
+Database.QueryValue(SQLstatement [, parameters])	Executes SQLstatement (with optional parameters) and returns a single value.
+
+ASP.NET Helpers
+ASP.NET helpers are components that can be accessed by single lines of Razor code.
+
+You can build your own helpers using Razor syntax stored as .cshtml files, or use built-in ASP.NET helpers.
+
+You will learn how to use Razor helpers in the next chapters of this tutorial.
+
+Below is a short description of some useful Razor helpers:
+
+The WebGrid Helper
+The WebGrid helper simplifies the way to display data:
+
+Automatically sets up an HTML table to display data
+Supports different options for formatting
+Supports paging (First, next, previous, last) through data
+Supports sorting by clicking on column headings
+The Chart Helper
+The "Chart Helper" can display chart images of different types with many formatting options and labels.
+
+chart chart
+
+The Chart helper can display data from arrays , from databases, or from files.
+
+The WebMail Helper
+The WebMail helper provides functions for sending email messages using SMTP (Simple Mail Transfer Protocol).
+
+The WebImage Helper
+The WebImage helper provides functionality to manage images in a web page.
+
+Keywords: flip, rotate, resize, watermark.
+
+Third Party Helpers
+With Razor you can take advantage of built-in or third party helpers to simplify the use of email, databases, multimedia, and social networks as well as many other issues like navigation and web security.
+
+Analytics (Google)
+Helper	Description
+Analytics.GetGoogleHtml(webPropertyId)	Renders the Google Analytics JavaScript code for the specified ID.
+Analytics.GetStatCounterHtml(project, security)	Renders the StatCounter Analytics JavaScript code for the specified project.
+Analytics.GetYahooHtml(account)	Renders the Yahoo Analytics JavaScript code for the specified account.
+Bing
+Helper	Description
+Bing.SearchBox([boxWidth])	Passes a search to Bing. To specify the site to search and a title for the search box, you can set the Bing.SiteUrl and Bing.SiteTitle properties. Normally you set these properties in the _AppStart page.
+Bing.AdvancedSearchBox([, boxWidth] [, resultWidth] [, resultHeight]
+  [, themeColor] [, locale])	Displays Bing search results in the page with optional formatting. To specify the site to search and a title for the search box, you can set the Bing.SiteUrl and Bing.SiteTitle properties. Normally you set these properties in the _AppStart page.
+Crypto
+Helper	Description
+Crypto.Hash(string [, algorithm])
+Crypto.Hash(bytes [, algorithm])	Returns a hash for the specified data. The default algorithm is sha256.
+Facebook
+Helper	Description
+Facebook.LikeButton(href [, buttonLayout] [, showFaces] [, width] [, height]
+[, action] [, font] [, colorScheme] [, refLabel])	Lets Facebook users make a connection to pages.
+FileUpload
+Helper	Description
+FileUpload.GetHtml([initialNumberOfFiles] [, allowMoreFilesToBeAdded]
+  [, includeFormTag] [, addText] [, uploadText])	Renders UI for uploading files.
+GamerCard
+Helper	Description
+GamerCard.GetHtml(gamerTag)	Renders the specified Xbox gamer tag.
+Gravatar Object Reference
+Helper	Description
+Gravatar.GetHtml(email [, imageSize] [, defaultImage] [, rating]
+  [, imageExtension] [, attributes])	Renders the Gravatar image for the specified email address.
+Json
+Helper	Description
+Json.Encode(object)	Converts a data object to a string in the JavaScript Object Notation (JSON) format.
+Json.Decode(string)	Converts a JSON-encoded input string to a data object that you can iterate over or insert into a database.
+LinkShare
+Helper	Description
+LinkShare.GetHtml(pageTitle [, pageLinkBack] [, twitterUserName]
+  [, additionalTweetText] [, linkSites])	Renders social networking links using the specified title and optional URL.
+ModelState
+Helper	Description
+ModelStateDictionary.AddError(key, errorMessage)	Associates an error message with a form field. Use the ModelState helper to access this member.
+ModelStateDictionary.AddFormError(errorMessage)	Associates an error message with a form. Use the ModelState helper to access this member.
+ModelStateDictionary.IsValid	Returns true if there are no validation errors. Use the ModelState helper to access this member.
+ObjectInfo
+Helper	Description
+ObjectInfo.Print(value [, depth] [, enumerationLength])	Renders the properties and values of an object and any child objects.
+Recaptcha
+Helper	Description
+Recaptcha.GetHtml([, publicKey] [, theme] [, language] [, tabIndex])	Renders the reCAPTCHA verification test.
+ReCaptcha.PublicKey
+ReCaptcha.PrivateKey	Sets public and private keys for the reCAPTCHA service. Normally you set these properties in the _AppStart page.
+ReCaptcha.Validate([, privateKey])	Returns the result of the reCAPTCHA test.
+ServerInfo
+Helper	Description
+ServerInfo.GetHtml()	Renders status information about ASP.NET Web Pages.
+Twitter
+Helper	Description
+Twitter.Profile(twitterUserName)	Renders a Twitter stream for the specified user.
+Twitter.Search(searchQuery)	Renders a Twitter stream for the specified search text.
+Video
+Helper	Description
+Video.Flash(filename [, width, height])	Renders a Flash video player for the specified file with optional width and height.
+Video.MediaPlayer(filename [, width, height])	Renders a Windows Media player for the specified file with optional width and height.
+Video.Silverlight(filename, width, height)	Renders a Silverlight player for the specified .xap file with required width and height.
+WebCache
+Helper	Description
+WebCache.Get(key)	Returns the object specified by key, or null if the object is not found.
+WebCache.Remove(key)	Removes the object specified by key from the cache.
+WebCache.Set(key, value [, minutesToCache] [, slidingExpiration])	Puts value into the cache under the name specified by key.
+WebImage
+Helper	Description
+WebImage(path)	Loads an image from the specified path.
+WebImage.AddImagesWatermark(image)	Adds the specified image as a watermark.
+WebImage.AddTextWatermark(text)	Adds the specified text to the image.
+WebImage.FlipHorizontal()
+WebImage.FlipVertical()	Flips the image horizontally or vertically.
+WebImage.GetImageFromRequest()	Loads an image when an image is posted to a page during a file upload.
+WebImage.Resize(width, height)	Resizes the image.
+WebImage.RotateLeft()
+WebImage.RotateRight()	Rotates the image to the left or the right.
+WebImage.Save(path [, imageFormat])	Saves the image to the specified path.
+
+Doing the HTML Yourself
+In a previous chapter, you displayed database data by using razor code, and doing the HTML markup yourself:
+
+Database Example
+@{
+var db = Database.Open("SmallBakery"); 
+var selectQueryString = "SELECT * FROM Product ORDER BY Name"; 
+}
+<html> 
+<body> 
+<h1>Small Bakery Products</h1> 
+<table> 
+<tr>
+<th>Id</th> 
+<th>Product</th> 
+<th>Description</th> 
+<th>Price</th> 
+</tr>
+@foreach(var row in db.Query(selectQueryString))
+{
+<tr> 
+<td>@row.Id</td> 
+<td>@row.Name</td> 
+<td>@row.Description</td> 
+<td style="text-align:right">@row.Price</td> 
+</tr> 
+}
+</table> 
+</body> 
+</html>
+Using The WebGrid Helper
+Using the WebGrid helper is an easier way to display data.
+
+The WebGrid helper:
+
+Automatically sets up an HTML table to display data
+Supports different options for formatting
+Supports paging through data
+Supports Sorting by clicking on column headings
+WebGrid Example
+@{ 
+var db = Database.Open("SmallBakery") ; 
+var selectQueryString = "SELECT * FROM Product ORDER BY Name"; 
+var data = db.Query(selectQueryString); 
+var grid = new WebGrid(data); 
+}
+<html> 
+<head> 
+<title>Displaying Data Using the WebGrid Helper</title> 
+</head> 
+<body> 
+<h1>Small Bakery Products</h1> 
+<div id="grid"> 
+@grid.GetHtml()
+</div> 
+</body> 
+</html>
+WebGrid Object Reference
+Helper	Description
+WebGrid(data)	Creates a new WebGrid object using data from a query.
+WebGrid.GetHtml()	Renders markup to display data in an HTML table.
+WebGrid.Pager()	Renders a pager for the WebGrid object.
+
+Chart From an Array
+The example below shows the code needed to display a chart from an array of values:
+
+Example
+@{ 
+var myChart = new Chart(width: 600, height: 400) 
+   .AddTitle("Employees") 
+   .AddSeries(chartType: "column",
+      xValue: new[] {  "Peter", "Andrew", "Julie", "Mary", "Dave" }, 
+      yValues: new[] { "2", "6", "4", "5", "3" }) 
+   .Write();
+}
+- new Chart creates a new chart object and sets its width and height
+
+- the AddTitle method specifies the chart title
+
+- the AddSeries method adds data to the chart
+
+- the chartType parameter defines the type of chart
+
+- the xValue parameter defines x-axis names
+
+- the yValues parameter defines the y-axis values
+
+- the Write() method displays the chart 
+
+Chart From Database Data
+You can run a database query and then use data from the results to create a chart:
+
+Example
+@{ 
+var db = Database.Open("SmallBakery"); 
+var dbdata = db.Query("SELECT Name, Price FROM Product"); 
+var myChart = new Chart(width: 600, height: 400) 
+   .AddTitle("Product Sales") 
+   .DataBindTable(dataSource: dbdata, xField: "Name")
+   .Write();
+}
+- var db = Database.Open opens the database (and assigns the database object to the variable db)
+
+- var dbdata = db.Query runs a database query and stores the result in dbdata
+
+- new Chart creates a chart new object and sets its width and height
+
+- the AddTitle method specifies the chart title
+
+- the DataBindTable method binds the data source to the chart
+
+- the Write() method displays the chart 
+
+An alternative to using the DataBindTable method is to use AddSeries (See previous example). DataBindTable is easier to use, but AddSeries is more flexible because you can specify the chart and data more explicitly:
+
+Example
+@{ 
+var db = Database.Open("SmallBakery"); 
+var dbdata = db.Query("SELECT Name, Price FROM Product"); 
+var myChart = new Chart(width: 600, height: 400) 
+   .AddTitle("Product Sales") 
+   .AddSeries(chartType:"Pie",
+      xValue: dbdata, xField: "Name",
+      yValues: dbdata, yFields: "Price")
+   .Write();
+}
+Chart From XML Data
+The third option for charting is to use an XML file as the data for the chart:
+
+Example
+@using System.Data;
+
+@{
+var dataSet = new DataSet();
+dataSet.ReadXmlSchema(Server.MapPath("data.xsd"));
+dataSet.ReadXml(Server.MapPath("data.xml"));
+var dataView = new DataView(dataSet.Tables[0]);
+var myChart = new Chart(width: 600, height: 400)
+   .AddTitle("Sales Per Employee")
+   .AddSeries("Default", chartType: "Pie",
+      xValue: dataView, xField: "Name",
+      yValues: dataView, yFields: "Sales")
+   .Write();}
+}
+Chart Object Reference
+Helper	Description
+Chart(width, height [, template] [, templatePath])	Initializes a chart.
+Chart.AddLegend([title] [, name])	Adds a legend to a chart.
+Chart.AddSeries([name] [, chartType] [, chartArea]
+  [, axisLabel] [, legend] [, markerStep] [, xValue]
+  [, xField] [, yValues] [, yFields] [, options])
+
+  The WebMail Helper - One of many useful ASP.NET Web Helpers.
+
+With the WebMail object you can easily send emails from a web page.
+
+The WebMail Helper
+The WebMail Helper makes it easy to send an email from a web application using SMTP (Simple Mail transfer Protocol).
+
+Scenario: Email Support
+To demonstrate the use of email, we will create an input page for support, let the user submit the page to another page, and send an email about the support problem.
+
+First: Edit Your AppStart Page
+If you have built the Demo application in this tutorial, you already have a page called _AppStart.cshtml with the following content:
+
+_AppStart.cshtml
+@{
+WebSecurity.InitializeDatabaseConnection("Users", "UserProfile", "UserId", "Email", true);
+}
+
+To initiate the WebMail helper, add the the following WebMail properties to your AppStart page:
+
+_AppStart.cshtml
+@{
+WebSecurity.InitializeDatabaseConnection("Users", "UserProfile", "UserId", "Email", true);
+WebMail.SmtpServer = "smtp.example.com";
+WebMail.SmtpPort = 25;
+WebMail.EnableSsl = false;
+WebMail.UserName = "support@example.com";
+WebMail.Password = "password-goes-here";
+WebMail.From = "john@example.com";
+}
+
+Properties explained:
+
+SmtpServer: The name the SMTP server that will be used to send the emails.
+
+SmtpPort: The port the server will use to send SMTP transactions (emails).
+
+EnableSsl: True, if the server should use SSL (Secure Socket Layer) encryption.
+
+UserName: The name of the SMTP email account used to send the email.
+
+Password: The password of the SMTP email account.
+
+From: The email to appear in the from address (often the same as UserName).
+
+Second: Create an Email Input Page
+Then create an input page, and name it Email_Input:
+
+Email_Input.cshtml
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Request for Assistance</h1>
+
+<form method="post" action="EmailSend.cshtml">
+<label>Username:</label>
+<input type="text" name="customerEmail" />
+<label>Details about the problem:</label>
+<textarea name="customerRequest" cols="45" rows="4"></textarea>
+<p><input type="submit" value="Submit" /></p>
+</form>
+
+</body>
+</html>
+
+The purpose of the input page is to collect information, then submit the data to a new page that can send the information as an email.
+
+Third: Create An Email Send Page
+Then create the page that will be used to send the email, and name it Email_Send:
+
+Email_Send.cshtml
+@{ // Read input
+var customerEmail = Request["customerEmail"];
+var customerRequest = Request["customerRequest"];
+try
+{
+// Send email
+WebMail.Send(to:"someone@example.com", subject: "Help request from - " + customerEmail, body: customerRequest );
+}
+catch (Exception ex )
+{
+<text>@ex</text>
+}
+}
+WebMail Object Reference - Properties
+Properties	Description
+SmtpServer	The name the SMTP server that will send the emails
+SmtpPort	The port the server will use to send SMTP emails
+EnableSsl	True, if the server should use SSL encryption
+UserName	The name of the SMTP account used to send the email
+Password	The password of the SMTP account
+From	The email to appear in the from address
+WebMail Object Reference - Methods
+Method	Description
+Send()	Sends an email message to an SMTP server for delivery
+The Send() method has the following parameters:
+
+Parameter	Type	Description
+to	String	The Email recipients (separated by semicolon)
+subject	String	The subject line
+body	String	The body of the message
+And the following optional parameters:
+
+Parameter	Type	Description
+from	String	The email of the sender
+cc	String	The cc emails (separated by semicolon)
+filesToAttach	Collection	Filenames
+isBodyHtml	Boolean	True if the email body is in HTML
+additionalHeaders	Collection	Additional headers
+Technical Data
+Name	Value
+Class	System.Web.Helpers.WebMail
+Namespace	System.Web.Helpers
+Assembly	System.Web.Helpers.dll
+Initializing the WebMail Helper
+To use the WebMail helper, you need access to an SMTP server. SMTP is the "output" part of email. If you use a web host, you probably already know the name of the SMTP server. If you work in a corporate network, your IT department can give you the name. If you are working at home, you might be able to use your ordinary email provider.
+
+ In order to send an email you will need:
+
+The name of the SMTP server
+The port number (most often 25)
+An email user name
+An email password
+In the root of your web, create a page (or edit the page ) named _AppStart.cshtml.
+
+Put the following code inside the file:
+
+_AppStart.cshtml
+@{
+WebMail.SmtpServer = "smtp.example.com";
+WebMail.SmtpPort = 25;
+WebMail.EnableSsl = false;
+WebMail.UserName = "support@example.com";
+WebMail.Password = "password";
+WebMail.From = "john@example.com"
+}
+The code above will run each time the web site (application) starts. It feeds your WebMail Object with initial values.
+
+Please substitute:
+
+smtp.example.com with the name the SMTP server that will be used to send the emails.
+
+25 with the port number the server will use to send SMTP transactions (emails).
+
+false with true, if the server should use SSL (Secure Socket Layer) encryption.
+
+support@example.com with the name of the SMTP email account used to send emails.
+
+password with the password of the SMTP email account.
+
+john@example with the email to appear in the from address.
+
+You don't have to initiate the WebMail object in your AppStart file, but you must set these properties before you call the WebMail.Send() method.
+
+Description
+The WebSecurity Object provides security and authentication for ASP.NET Web Pages applications.
+
+With the WebSecurity object you can create user accounts, login and logout users, reset or change passwords, and more.
+
+WebSecurity Object Reference - Properties
+Properties	Description
+CurrentUserId	Gets the ID for the current user
+CurrentUserName	Gets the name of the current user
+HasUserId	Returns true if the current has a user ID
+IsAuthenticated	Returns true if the current user is logged in
+
+WebSecurity Object Reference - Methods
+Method	Description
+ChangePassword()	Changes the password for a user
+ConfirmAccount()	Confirms an account using a confirmation token
+CreateAccount()	Creates a new user account
+CreateUserAndAccount()	Creates a new user account
+GeneratePasswordResetToken()	Generates a token that can be sent to as user by email
+GetCreateDate()	Gets the time the specified membership was created
+GetPasswordChangeDate()	Gets the date and time when password was changed
+GetUserId()	Gets a user ID from a user name
+InitializeDatabaseConnection()	Initializes the WebSecurity system (database)
+IsConfirmed()	Checks if a user is confirmed
+IsCurrentUser()	Checks if the current user matches a user name
+Login()	Logs the user in by setting a token in the cookie
+Logout()	Logs the user out by removing the token cookie
+RequireAuthenticatedUser()	Exits the page if the user is not an authenticated user
+RequireRoles()	Exits the page if the user is not a part of the specified roles
+RequireUser()	Exits the page if the user is not the specified user
+ResetPassword()	Changes a user's password using a token
+UserExists()	Checks if a given user exists
+Initializing the WebSecurity Database
+You must create or initialize an WebSecurity database before you can use the WebSecurity object in your code.
+
+In the root of your web, create a page (or edit the page ) named _AppStart.cshtml.
+
+Put the following code inside the file:
+
+_AppStart.cshtml
+@{
+WebSecurity.InitializeDatabaseConnection("Users", "UserProfile", "UserId", "Email", true);
+}
+The code above will run each time the web site (application) starts. It initializes the WebSecurity database.
+
+"Users" is the name of the WebSecurity database (Users.sdf).
+
+"UserProfile" is the name of the database table that contains the user profile information.
+
+"UserId" is the name of the column that contains the user IDs (primary key).
+
+"Email" is the name of the column that contains user names.
+
+The last parameter true is a boolean value indicating that the user profile and membership tables should be created automatically if they don't exist, otherwise false.
+
+Although true indicates automatic creation of the database tables, the database itself will not be created automatically. It must exist.
+
+The WebSecurity Database
+The UserProfile table contains one record for each user, with a user ID (primary key) and the user's name (email):
+
+UserId	Email
+1	john@johnson.net
+2 	peter@peterson.com
+3	lars@larson.eut
+The Membership table will contain membership information about when the user was created and if (and when) the membership was confirmed.
+
+Much like this (some columns are not shown):
+
+User
+Id	Create
+Date	Confirmation
+Token	Is
+Confirmed	Last
+Password
+Failure	Password	Password
+Change
+1	12.04.2012 16:12:17	NULL	True	NULL	AFNQhWfy....	12.04.2012 16:12:17
+Simple Membership Configuration
+You might get errors using the WebSecurity object, if your site is not configured to use the ASP.NET Web Pages membership system SimpleMembership.
+
+This can occur if a hosting provider's server is configured differently than your local server. To fix this, add the following element to the site's Web.config file:
+
+<appSettings>
+<add key="enableSimpleMembership" value="true" />
+</appSettings>
+
+1. Use the Latest Version of ASP.NET
+Before you continue, make sure your hosting computer runs the latest version of ASP.NET (4.0 or 4.5).
+
+2. Copy the Web Folders
+Copy your website (all folders and content) from your development computer to an application folder on your remote hosting computer (server).
+
+If your application contains data, don't copy the data (see point 4 below).
+
+3. The DLL Files
+Make sure the bin folder, on your remote hosting computer, contains the same dll files as on your development computer.
+
+After copying the bin folder, it should contain files like this:
+
+Microsoft.Web.Infrastructure.dll
+NuGet.Core.dll
+System.Web.Helpers.dll
+System.Web.Razor.dll
+System.Web.WebPages.Administration.dll
+System.Web.WebPages.Deployment.dll
+System.Web.WebPages.dll
+System.Web.WebPages.Razor.dll
+WebMatrix.Data.dll
+WebMatrix.WebData
+
+4. Copy Your Data
+If your application contains data or a database. For instance an SQL Server Compact database (a .sdf file in App_Data folder), consider the following:
+
+Do you want to publish your test data to the remote server?
+
+Most likely not.
+
+If you have test data on your development computer, it may overwrite production data on your remote hosting computer.
+
+If you have to copy an SQL database (.sdf file), perhaps you should delete everything in the database, and then copy the empty .sdf file from your development computer to the server.
+
+Learn ASP.NET Web Pages by C# and Visual Basic examples.
+
+Examples in C#	Examples in VB
+
+Basic Web Pages
+Display Date and Time
+Reusable Header and Footer
+Basic HTML Form
+Examples Explained
+
+
+Basic Web Pages
+Display Date and Time
+Reusable Header and Footer
+Basic HTML Form
+Examples Explained
+
+
+Basic C#
+For Loop
+For Each Loop
+While Loop
+Array
+
+If Condition
+If Else Condition
+Else If Condition
+Switch Condition
+Examples Explained
+
+
+Basic VB
+For Loop
+For Each Loop
+While Loop
+Array
+
+If Condition
+If Else Condition
+Else If Condition
+Select Condition
+Examples Explained
+
+
+Working with Databases
+Display Database Data
+Display Data with WebGrid
+Examples Explained
+
+
+Working with Databases
+Display Database Data
+Display Data with WebGrid
+Examples Explained
+
+
+Using the Chart Helper
+Display a Bar Chart from an Array
+Display a Bar Chart from a Database
+Display a Pie Chart from a Database
+Display a Pie Chart from an XML File
+Examples Explained
+
+
+Using the Chart Helper
+Display a Bar Chart from an Array
+Display a Bar Chart from a Database
+Display a Pie Chart from a Database
+Display a Pie Chart from an XML File
+Examples Explained
+
+ASP.NET Classes Reference
+Method	Description
+AsBool(), AsBool(true|false)	Converts a string value to a Boolean value (true/false). Returns false or the specified value if the string does not represent true/false.
+AsDateTime(), AsDateTime(value)	Converts a string value to date/time. Returns DateTime. MinValue or the specified value if the string does not represent a date/time.
+AsDecimal(), AsDecimal(value)	Converts a string value to a decimal value. Returns 0.0 or the specified value if the string does not represent a decimal value.
+AsFloat(), AsFloat(value)	Converts a string value to a float. Returns 0.0 or the specified value if the string does not represent a decimal value.
+AsInt(), AsInt(value)	Converts a string value to an integer. Returns 0 or the specified value if the string does not represent an integer.
+Href(path [, param1 [, param2]])	Creates a browser-compatible URL from a local file path, with optional additional path parts.
+Html.Raw(value)	Renders value as HTML markup instead of rendering it as HTML-encoded output.
+IsBool(), IsDateTime(), IsDecimal(), IsFloat(), IsInt()	Returns true if the value can be converted from a string to the specified type.
+IsEmpty()	Returns true if the object or variable has no value.
+IsPost	Returns true if the request is a POST. (Initial requests are usually a GET.)
+Layout	Specifies the path of a layout page to apply to this page.
+PageData[key], PageData[index], Page	Contains data shared between the page, layout pages, and partial pages in the current request. You can use the dynamic Page property to access the same data, as in the following example:
+RenderBody()	(Layout pages) Renders the content of a content page that is not in any named sections.
+RenderPage(path, values)
+RenderPage(path[, param1 [, param2]])	Renders a content page using the specified path and optional extra data. You can get the values of the extra parameters from PageData by position (example 1) or key (example 2).
+RenderSection(sectionName [, required = true|false])	(Layout pages) Renders a content section that has a name. Set required to false to make a section optional.
+Request.Cookies[key]	Gets or sets the value of an HTTP cookie.
+Request.Files[key]	Gets the files that were uploaded in the current request.
+Request.Form[key]	Gets data that was posted in a form (as strings). Request[key] checks both the Request.Form and the Request.QueryString collections.
+Request.QueryString[key]	Gets data that was specified in the URL query string. Request[key] checks both the Request.Form and the Request.QueryString collections.
+Request.Unvalidated(key)
+Request.Unvalidated().QueryString|Form|Cookies|Headers[key]	Selectively disables request validation for a form element, query-string value, cookie, or header value. Request validation is enabled by default and prevents users from posting markup or other potentially dangerous content.
+Response.AddHeader(name, value)	Adds an HTTP server header to the response.
+Response.OutputCache(seconds [, sliding] [, varyByParams])	Caches the page output for a specified time. Optionally set sliding to reset the timeout on each page access and varyByParams to cache different versions of the page for each different query string in the page request.
+Response.Redirect(path)	Redirects the browser request to a new location.
+Response.SetStatus(httpStatusCode)	Sets the HTTP status code sent to the browser.
+Response.WriteBinary(data [, mimetype])	Writes the contents of data to the response with an optional MIME type.
+Response.WriteFile(file)	Writes the contents of a file to the response.
+@section(sectionName) { content }	(Layout pages) Defines a content section that has a name.
+Server.HtmlDecode(htmlText)	Decodes a string that is HTML encoded.
+Server.HtmlEncode(text)	Encodes a string for rendering in HTML markup.
+Server.MapPath(virtualPath)	Returns the server physical path for the specified virtual path.
+Server.UrlDecode(urlText)	Decodes text from a URL.
+Server.UrlEncode(text)	Encodes text to put in a URL.
+Session[key]	Gets or sets a value that exists until the user closes the browser.
+ToString()	Displays a string representation of the object's value.
+UrlData[index]	Gets additional data from the URL (for example, /MyPage/ExtraData).
+
+Razor is not a programming language. It's a server side markup language.
+
+What is Razor?
+Razor is a markup syntax that lets you embed server-based code (Visual Basic and C#) into web pages.
+
+Server-based code can create dynamic web content on the fly, while a web page is written to the browser. When a web page is called, the server executes the server-based code inside the page before it returns the page to the browser. By running on the server, the code can perform complex tasks, like accessing databases.
+
+Razor is based on ASP.NET, and designed for creating web applications. It has the power of traditional ASP.NET markup, but it is easier to use, and easier to learn.
+
+Razor Syntax
+Razor uses a syntax very similar to PHP and Classic ASP.
+
+Razor:
+
+<ul>
+@for (int i = 0; i < 10; i++) {
+<li>@i</li>
+}
+</ul>
+PHP:
+
+<ul>
+<?php
+for ($i = 0; $i < 10; $i++) {
+echo("<li>$i</li>");
+}
+?>
+</ul>
+Classic ASP:
+
+<ul>
+<%for i = 0 to 10%>
+<li><%=i%></li>
+<%next%>
+</ul> 
+Razor Helpers
+ASP.NET helpers are components that can be accessed by single lines of Razor code.
+
+You can build your own helpers using Razor syntax, or use built-in ASP.NET helpers.
+
+Below is a short description of some useful Razor helpers:
+
+Web Grid
+Web Graphics
+Google Analytics
+Facebook Integration
+Twitter Integration
+Sending Email
+Validation
+Razor Programming Languages
+Razor supports both C# (C sharp) and VB (Visual Basic).
+
+Razor supports both C# (C sharp) and VB (Visual Basic).
+
+Main Razor Syntax Rules for C#
+Razor code blocks are enclosed in @{ ... }
+Inline expressions (variables and functions) start with @
+Code statements end with semicolon
+Variables are declared with the var keyword
+Strings are enclosed with quotation marks
+C# code is case sensitive
+C# files have the extension .cshtml
+C# Example
+<!-- Single statement block -->
+@{ var myMessage = "Hello World"; }
+
+<!-- Inline expression or variable -->
+<p>The value of myMessage is: @myMessage</p>
+
+<!-- Multi-statement block -->
+@{
+var greeting = "Welcome to our site!";
+var weekDay = DateTime.Now.DayOfWeek;
+var greetingMessage = greeting + " Here in Huston it is: " + weekDay;
+}
+<p>The greeting is: @greetingMessage</p>
+Main Razor Syntax Rules for VB
+Razor code blocks are enclosed in @Code ... End Code
+Inline expressions (variables and functions) start with @
+Variables are declared with the Dim keyword
+Strings are enclosed with quotation marks
+VB code is not case sensitive
+VB files have the extension .vbhtml
+Example
+<!-- Single statement block  --> 
+@Code dim myMessage = "Hello World" End Code
+ 
+<!-- Inline expression or variable --> 
+<p>The value of myMessage is: @myMessage</p> 
+ 
+<!-- Multi-statement block --> 
+@Code
+dim greeting = "Welcome to our site!" 
+dim weekDay = DateTime.Now.DayOfWeek 
+dim greetingMessage = greeting & " Here in Huston it is: " & weekDay
+End Code
+
+<p>The greeting is: @greetingMessage</p>
+How Does it Work?
+Razor is a simple programming syntax for embedding server code in web pages.
+
+Razor syntax is based on the ASP.NET framework, the part of the Microsoft.NET Framework that's specifically designed for creating web applications.  
+
+The Razor syntax gives you all the power of ASP.NET, but is using a simplified syntax that's easier to learn if you're a beginner, and makes you more productive if you're an expert.
+
+Razor web pages can be described as HTML pages with two kinds of content: HTML content and Razor code.
+
+When the server reads the page, it runs the Razor code first, before it sends the HTML page to the browser. The code that is executed on the server can perform tasks that cannot be done in the browser, for example accessing a server database. Server code can create dynamic HTML content on the fly, before it is sent to the browser. Seen from the browser, the HTML generated by server code is no different than static HTML content.
+
+ASP.NET web pages with Razor syntax have the special file extension cshtml (Razor using C#) or vbhtml (Razor using VB).
+
+Working With Objects
+Server coding often involves objects.
+
+The "DateTime" object is a typical built-in ASP.NET object, but objects can also be self-defined, a web page, a text box, a file, a database record, etc.
+
+Objects may have methods they can perform. A database record might have a "Save" method, an image object might have a "Rotate" method, an email object might have a "Send" method, and so on.
+
+Objects also have properties that describe their characteristics. A database record might have a FirstName and a LastName property (among others).
+
+The ASP.NET DateTime object has a Now property (written as DateTime.Now), and the Now property has a Day property (written as DateTime.Now.Day). The example below shows how to access some properties of the DateTime object:
+
+Example
+<table border="1">
+<tr>
+<th width="100px">Name</th>
+<td width="100px">Value</td>
+</tr>
+<tr>
+<td>Day</td><td>@DateTime.Now.Day</td>
+</tr>
+<tr>
+<td>Hour</td><td>@DateTime.Now.Hour</td>
+</tr>
+<tr>
+<td>Minute</td><td>@DateTime.Now.Minute</td>
+</tr>
+<tr>
+<td>Second</td><td>@DateTime.Now.Second</td>
+</tr>
+</td>
+</table>
+If and Else Conditions
+An important feature of dynamic web pages is that you can determine what to do based on conditions.
+
+The common way to do this is with the if ... else statements:
+
+Example
+@{
+var txt = "";
+if(DateTime.Now.Hour > 12)
+  {txt = "Good Evening";}
+else
+  {txt = "Good Morning";}
+}
+<html>
+<body>
+<p>The message is @txt</p>
+</body>
+</html>
+Reading User Input
+Another important feature of dynamic web pages is that you can read user input.
+
+Input is read by the Request[] function, and posting (input) is tested by the IsPost condition:
+
+Variables are named entities used to store data.
+
+Variables
+Variables are used to store data.
+
+The name of a variable must begin with an alphabetic character and cannot contain whitespace or reserved characters.
+
+A variable can be of a specific type, indicating the kind of data it stores. String variables store string values ("Welcome to W3Schools"), integer variables store number values (103), date variables store date values, etc.
+
+Variables are declared using the var keyword, or by using the type (if you want to declare the type), but ASP.NET can usually determine data types automatically.
+
+Examples
+// Using the var keyword:
+var greeting = "Welcome to W3Schools";
+var counter = 103;
+var today = DateTime.Today;
+
+// Using data types:
+string greeting = "Welcome to W3Schools";
+int counter = 103;
+DateTime today = DateTime.Today;
+Data Types
+Below is a list of  common data types:
+
+Type	Description	Examples
+int	Integer (whole numbers)	103, 12, 5168
+float	Floating-point number	3.14, 3.4e38
+decimal	Decimal number (higher precision)	1037.196543
+bool	Boolean	true, false
+string	String	"Hello W3Schools", "John"
+Operators
+An operator tells ASP.NET what kind of command to perform in an expression.
+
+ The C# language supports many operators. Below is a list of common operators:
+
+Operator	Description	Example
+=	Assigns a value to a variable.	i=6
++
+-
+*
+/
+Adds a value or variable.
+Subtracts a value or variable.
+Multiplies a value or variable.
+Divides a value or variable.	i=5+5
+i=5-5
+i=5*5
+i=5/5
++=
+-=	Increments a variable.
+Decrements a variable.	i += 1
+i -= 1
+==	Equality. Returns true if values are equal.	if (i==10)
+!=	Inequality. Returns true if values are not equal.	if (i!=10)
+<
+>
+<=
+>=	Less than.
+Greater than.
+Less than or equal.
+Greater than or equal.	if (i<10)
+if (i>10)
+if (i<=10)
+if (i>=10)
++	Adding strings (concatenation).	"w3" + "schools"
+.	Dot. Separate objects and methods.	DateTime.Hour
+()	Parenthesis. Groups values.	(i+5)
+()	Parenthesis. Passes parameters.	x=Add(i,5)
+[]	Brackets. Accesses values in arrays or collections.	name[3]
+!	Not. Reverses true or false.	if (!ready)
+&&
+||	Logical AND.
+Logical OR.	if (ready && clear)
+if (ready || clear)
+Converting Data Types
+Converting from one data type to another is sometimes useful.
+
+The most common example is to convert string input to another type, such as an integer or a date.
+
+As a rule, user input comes as strings, even if the user entered a number. Therefore, numeric input values must be converted to numbers before they can be used in calculations.
+
+Below is a list of common conversion methods:
+
+Method	Description	Example
+AsInt()
+IsInt()	Converts a string to an integer.	if (myString.IsInt())
+  {myInt=myString.AsInt();}
+AsFloat()
+IsFloat()	Converts a string to a floating-point number.	if (myString.IsFloat())
+  {myFloat=myString.AsFloat();}
+AsDecimal()
+IsDecimal()	Converts a string to a decimal number.	if (myString.IsDecimal())
+  {myDec=myString.AsDecimal();}
+AsDateTime()
+IsDateTime()	Converts a string to an ASP.NET DateTime type.	myString="10/10/2012";
+myDate=myString.AsDateTime();
+AsBool()
+IsBool()	Converts a string to a Boolean.	myString="True";
+myBool=myString.AsBool();
+ToString()	Converts any data type to a string.	myInt=1234;
+myString=myInt.ToString();
+
+
+
+
+

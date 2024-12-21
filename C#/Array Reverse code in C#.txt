@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PractsC
+{
+    public class Program
+    {
+        static void Main()
+        {
+            int size, index_1, index_2, temporary;
+            Console.Write("Enter the size of an array = ");
+            size = Convert.ToInt32(Console.ReadLine());
+
+            int[] Array = new int[size];
+            Console.WriteLine("Enter the " + size + " elements of the array:");
+            for (index_1 = 0; index_1 < size; index_1++)
+            {
+                Array[index_1] = Convert.ToInt32(Console.ReadLine());
+            }
+            Console.WriteLine("Elements of array before reverse order:");
+            for (index_1 = 0; index_1 < size; index_1++)
+            {
+                Console.Write(Array[index_1]+" ");
+            }
+
+            for (index_1 = 0, index_2 = size - 1; index_1 < size / 2; index_1++, index_2--)
+            {
+                temporary = Array[index_1];
+                Array[index_1] = Array[index_2];
+                Array[index_2] = temporary;
+            }
+            Console.WriteLine("\n Elements of an array after reverse order =");
+            for (index_1 = 0; index_1 < size; index_1++)
+            {
+                {
+                    Console.Write(Array[index_1] + " ");
+                }
+            }
+              Console.ReadLine();
+        }
+    }
+}

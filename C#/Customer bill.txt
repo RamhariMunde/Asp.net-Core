@@ -1,0 +1,35 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Hello1
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string Customer_name;
+            double Bill_Amount, Discount_Amount = 0, Total_Amount_to_pay;
+
+            Console.Write("Enter the customer Name: ");
+            Customer_name = Console.ReadLine();
+            Console.Write("Enter bill Amount: ");
+            Bill_Amount = Convert.ToDouble(Console.ReadLine());
+            
+            if(Bill_Amount >= 800)
+            {
+                Discount_Amount = Bill_Amount * 0.12;
+            }
+            Total_Amount_to_pay = Bill_Amount-Discount_Amount;
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine("Customer name: " + Customer_name);
+            Console.WriteLine("Bill of medicine: "+Bill_Amount);
+            Console.WriteLine("Discount give to the customer: "+Discount_Amount);
+            Console.WriteLine("This is Final Bill of: "+Total_Amount_to_pay);
+            Console.ReadKey();
+        }
+    }
+}
