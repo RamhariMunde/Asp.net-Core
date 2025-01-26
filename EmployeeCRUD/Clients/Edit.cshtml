@@ -1,0 +1,74 @@
+﻿@page
+@model MyStore.Pages.Clients.EditModel
+@{
+}
+
+<div class="container mt-5">
+    <h2>Edit Client</h2>
+
+    @if (Model.errorMessage.Length > 0)
+    {
+        <div class='alert alert-warning alert-dismissible fade show' role="alert">
+            <strong>@Model.errorMessage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <form method="POST">
+        <input type="hidden" name="id" value="@Model.clientInfo.id"/>
+
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Name</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="name" value="@Model.clientInfo.name "required />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Designation</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="designation" value="@Model.clientInfo.designation" required/>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Date of Join</label>
+            <div class="col-sm-6">
+                <input type="date" class="form-control" name="doj" value="@Model.clientInfo.doj" required />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Salary</label>
+            <div class="col-sm-6">
+                <input type="number" min="1000" max="5000" class="form-control" name="salary" value="@Model.clientInfo.salary"required />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">Gender</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="gender" value="@Model.clientInfo.gender"required />
+            </div>
+        </div>
+        <div class="row mb-3">
+            <label class="col-sm-3 col-form-label">State</label>
+            <div class="col-sm-6">
+                <input type="text" class="form-control" name="state" value="@Model.clientInfo.state" required/>
+            </div>
+        </div>
+
+        @if (Model.successMessage.Length > 0)
+        {
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>@Model.successMessage</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        }
+
+        <div class="row mb-3">
+            <div class="offset-sm-3 col-sm-3 d-grid">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            <div class="col-sm-3 d-grid">
+                <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+            </div>
+        </div>
+    </form>
+</div>

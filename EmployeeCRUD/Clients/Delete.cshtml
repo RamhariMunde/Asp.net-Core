@@ -1,0 +1,27 @@
+﻿@page
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+@using Microsoft.Data.SqlClient;
+@{
+    try
+    {
+        string id = Request.Query["id"];
+
+        string connectionString = "Data Source=RBM;Initial Catalog=Employees;Integrated Security=True;Encrypt=False";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string Sql = "delete from Employee WHERE id=@id";
+            using (SqlCommand command = new SqlCommand(Sql,connection))
+            {
+                command.Parameters.AddWithValue("@id",id);
+                command.ExecuteNonQuery();
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+
+    }
+    Response.Redirect("/Clients/Index");
+}
+
