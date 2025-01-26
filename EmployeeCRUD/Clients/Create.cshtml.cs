@@ -57,7 +57,7 @@ namespace MyStore.Pages.Clients
                 }
 
                 // Save the new client into the database
-                string connectionString = "Data Source=RBM;Initial Catalog=Employees;Integrated Security=True;Encrypt=False";
+                string connectionString = "Data Source=XYZ;Initial Catalog=Employees;Integrated Security=True;Encrypt=False";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
