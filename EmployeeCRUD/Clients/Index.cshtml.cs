@@ -16,7 +16,7 @@ namespace MyStore.Pages.Clients
             try
             {
                 //string connectionString = "Server=.;Database=RBM;Trusted_Connection=True;TrustServerCertificate=Truel;";
-                string connectionString = "Data Source=RBM;Initial Catalog=Employees;Integrated Security=True;Encrypt=False";
+                string connectionString = "Data Source=XYZ;Initial Catalog=Employees;Integrated Security=True;Encrypt=False";
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
