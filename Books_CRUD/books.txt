@@ -1,0 +1,9 @@
+This types of projects, How to create simple way is the 
+step 1 - create the one projct name is Asp.net core web app(Model-View-Controller)
+step 2 - create one model folder and inside of model folder create one .cs file and add your propertys in it.
+step 3 - go to the controller and right click on it then check the (add) button, then click on the (new scaffold item)  
+         and then click on the (MVC controller with using with EF) 
+step 4 - add all the info in it 
+step 5 - one command run (add-migration)
+step 6 - update-database
+done
