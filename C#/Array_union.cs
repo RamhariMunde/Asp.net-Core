@@ -34,3 +34,31 @@ namespace ALL_IN_OnePracticeC_
   */
     }
 }
+
+// without using union function
+/*
+  public static void Main(string[] args)
+  {
+      int[] arr1 = { 5, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, };
+      int[] arr2 = { 4, 5, 6, 7, 8, 9, 10, 65, 54, 90, 100 };
+
+      List<int> unionlist = new List<int>();
+
+      foreach (int i in arr1)
+      {
+         if(!unionlist.Contains(i))
+          {
+              unionlist.Add(i);
+          }
+      }
+      foreach(int i in arr2)
+      {
+          if(!unionlist.Contains(i))
+          {
+              unionlist.Add(i);
+          }
+      }
+      Console.WriteLine(string.Join(",", unionlist));
+      Console.ReadKey();
+  }
+*/
